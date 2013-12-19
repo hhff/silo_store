@@ -1,0 +1,14 @@
+.row
+  .small-12.columns
+    h3 Edit Release
+  form submit="addEntry"
+    .small-12.columns
+      Ember.TextField valueBinding="name" placeholder="Release Name" type="text"
+      Ember.TextField valueBinding="artist" placeholder="Artist" type="text"
+      Ember.TextField valueBinding="release_date" placeholder="Release Date" type="text"
+      Ember.TextField valueBinding="upc_ean" placeholder="UPC / EAN" type="text"
+      Ember.TextField valueBinding="is_private" placeholder="Visibility" type="text"
+
+    =linkTo "releases.show" this
+      .button Back
+    button Update

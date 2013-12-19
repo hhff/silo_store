@@ -1,0 +1,10 @@
+= each release in controller
+  = linkTo "releases.show" release
+    .row.hover-row.padded
+      .small-3.columns
+        img src="https://dl.dropboxusercontent.com/s/0mczrnyluji0f5w/artwork.png"
+      .small-9.columns
+        h6= release.artist
+        h6= release.name
+        h6= release.release_date
+        h6= release.is_private

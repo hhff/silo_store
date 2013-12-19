@@ -1,0 +1,34 @@
+.off-canvas-wrap
+  .inner-wrap
+    nav.top-bar
+      section.left-small
+        a.left-off-canvas-toggle.menu-icon
+          span
+      section.middle.tab-bar-section
+        h3.title.white-text Company Name
+      section.right-small
+        a.right-off-canvas-toggle.menu-icon
+          span
+
+    aside.left-off-canvas-menu
+      ul.off-canvas-list
+        li
+          label Menu
+        li
+          label Dashboard
+        li
+          label Releases
+            
+
+    aside.right-off-canvas-menu
+      ul.off-canvas-list
+        li
+          label Settings
+        li
+          label Connect Panel
+        li
+          label Company Details
+
+    = outlet
+
+    a.exit-off-canvas

@@ -1,0 +1,24 @@
+.row
+  .small-12.columns
+    h2= artist
+    h3= name
+.row
+  .small-4.columns
+    img src="https://dl.dropboxusercontent.com/s/0mczrnyluji0f5w/artwork.png"
+  .small-8.columns
+    h6= release_date
+    h6= upc_ean
+    h6= is_private
+
+.row.hover-row
+  .small-12.columns
+    h6 Milk
+.row.hover-row
+  .small-12.columns
+    h6 Skinny Dipping
+
+.row.bottom-buttons
+  =linkTo "releases.index"
+    .button Back
+  =linkTo "releases.update" this
+    .button.right Edit

@@ -1,0 +1,12 @@
+.row
+  .small-12.columns
+    h3 New Release
+  form submit="addEntry"
+    .small-12.columns
+      Ember.TextField valueBinding="newRelease-name" placeholder="Release Name" type="text"
+      Ember.TextField valueBinding="newRelease-artist" placeholder="Artist" type="text"
+      Ember.TextField valueBinding="newRelease-release_date" placeholder="Release Date" type="text"
+      Ember.TextField valueBinding="newRelease-upc_ean" placeholder="UPC / EAN" type="text"
+      Ember.TextField valueBinding="newRelease-is_private" placeholder="Visibility" type="text"
+
+      button Add Release
