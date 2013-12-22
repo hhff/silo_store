@@ -1,5 +1,25 @@
 TODO
 
 - Flash Messages
+
 - Devise
+  Switch to Serializer
+
+
 - File Uploads
+
+- OAuth
+
+- Spree
+
+
+
+PRODUCTION
+
+DEVISE:
+config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+EMBER:
+config.ember.variant = :production
+
+

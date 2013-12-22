@@ -1,0 +1,8 @@
+nav.top-bar.sub
+  / section.left-small
+  /   h6 All
+
+  / section.right-small
+  /   h6 New
+
+= outlet

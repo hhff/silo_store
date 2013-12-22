@@ -1,10 +1,14 @@
 SiloStore::Application.routes.draw do
+  devise_for :users
+
   get "main/home"
   resources :releases
 
   namespace :api do
     namespace :v1 do
       resources :releases
+      resources :users, only: [:create, :show]
+      resources :sessions, only: [:create, :destroy]
     end
   end
 

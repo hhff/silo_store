@@ -1,0 +1,10 @@
+.row
+  .small-12.columns
+    h3 Sign Up
+  form submit="signUp"
+    .small-12.columns
+      Ember.TextField valueBinding="email" placeholder="Email" type="text"
+      Ember.TextField valueBinding="password" placeholder="Password" type="text"
+      Ember.TextField valueBinding="passwordConfirmation" placeholder="Password Confirmation" type="text"
+
+      button Sign Up

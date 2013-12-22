@@ -21,6 +21,8 @@ gem 'ember-rails'
 gem 'haml-rails'
 gem 'emblem-rails'
 
+gem 'devise'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
