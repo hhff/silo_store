@@ -9,13 +9,13 @@
 
 puts "Seeding..."
 
-User.create(
+user = User.create(
   :email => "user@example.com", 
   :password => "password", 
   :password_confirmation => "password"
 )
 
-Release.create(
+release = Release.create(
   name: "Long Vacation",
   artist: "Rainbow Chan",
   release_date: DateTime.strptime("09/01/2009 17:00", "%m/%d/%Y %H:%M"),
@@ -23,12 +23,18 @@ Release.create(
   upc_ean: "UPC-EAN-HERE"
 )
 
-Release.create(
+release.user = user
+release.save
+
+release = Release.create(
   name: "See Water",
   artist: "Motion Picture Actress",
   release_date: DateTime.strptime("09/01/2009 17:00", "%m/%d/%Y %H:%M"),
   is_private: true,
   upc_ean: "UPC-EAN-HERE"
 )
+
+release.user = user
+release.save
 
 puts "Complete!"
