@@ -14,10 +14,12 @@
       ul.off-canvas-list
         li
           label Menu
+        li 
+          = linkTo 'dashboard'
+            h6 Dashboard
         li
-          label Dashboard
-        li
-          label Releases
+          = linkTo 'releases'
+            h6 Releases
             
 
     aside.right-off-canvas-menu
@@ -28,6 +30,15 @@
           label Connect Panel
         li
           label Company Details
+    .row
+      .small-6
+        if currentUser.isSignedIn
+          h6= currentUser.email
+        else
+          h6 Not Logged In
+      .small-6
+        = linkTo 'sessions.destroy'
+          | Logout
 
     = outlet
 

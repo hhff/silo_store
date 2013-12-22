@@ -1,8 +1,10 @@
 class Api::V1::ReleasesController < ApplicationController
 	respond_to :json
 
+  before_filter :authenticate_user!
+
 	def index
-		respond_with Release.all
+		respond_with current_user.releases
 	end
 
 	def show
@@ -10,7 +12,15 @@ class Api::V1::ReleasesController < ApplicationController
 	end 
 
 	def create
-		respond_with Release.create(release_params)
+		@release = Release.new(release_params)
+		@release.user = current_user
+
+		if @release.save
+			respond_with @release
+		else
+			# Didn't work!
+		end
+
 	end
 
 	def destroy
@@ -20,7 +30,7 @@ class Api::V1::ReleasesController < ApplicationController
 	private
 
 		def release_params
-			params.require(:release).permit(:name, :artist, :releaseDate, :isPrivate, :upcEan)
+			params.require(:release).permit(:name, :artist, :release_date, :is_private, :upc_ean, :user_id)
 		end
 
 end

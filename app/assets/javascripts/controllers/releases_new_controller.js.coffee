@@ -1,8 +1,7 @@
-SiloStore.ReleasesNewController = Ember.ArrayController.extend
+SiloStore.ReleasesNewController = Ember.ObjectController.extend
 
   actions:{
     addEntry: ->
-      newRelease = SiloStore.Release.createRecord(name: @get('newRelease-name'))
-      newRelease.save()
+      @content.save()
       @transitionToRoute('releases')
   }

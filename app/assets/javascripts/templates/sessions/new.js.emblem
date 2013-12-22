@@ -6,4 +6,4 @@
       Ember.TextField valueBinding="email" placeholder="Email" type="text"
       Ember.TextField valueBinding="password" placeholder="Password" type="text"
 
-      button Log In
+      button.small-12.columns Log In

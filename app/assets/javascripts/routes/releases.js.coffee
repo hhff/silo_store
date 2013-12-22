@@ -8,3 +8,9 @@ SiloStore.ReleasesShowRoute = Ember.Route.extend
 SiloStore.ReleasesUpdateRoute = Ember.Route.extend
   model: (params) ->
     SiloStore.Release.find(params.release_id)
+
+SiloStore.ReleasesNewRoute = Ember.Route.extend
+  model: -> SiloStore.Release.createRecord()
+
+  setupController: (controller, model)->
+    controller.set('content', model)

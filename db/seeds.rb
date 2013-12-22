@@ -9,6 +9,12 @@
 
 puts "Seeding..."
 
+User.create(
+  :email => "user@example.com", 
+  :password => "password", 
+  :password_confirmation => "password"
+)
+
 Release.create(
   name: "Long Vacation",
   artist: "Rainbow Chan",
