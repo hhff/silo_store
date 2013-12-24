@@ -6,11 +6,25 @@ SiloStore.SessionsNewRoute = Ember.Route.extend
 
 SiloStore.SessionsDestroyRoute = Ember.Route.extend
   enter: ->
-    controller = @controllerFor('currentUser')
-    controller.set('content', undefined)
+    self = @
+    controller = @controllerFor('admin')
 
-    SiloStore.Session.find('current').then((session)->
-      # session.deleteRecord()
-      # controller.store.commit()
-      console.log 'find aint there'
-    )
+    # user = SiloStore.User.find 'current'
+
+    $.ajax
+      url: '/api/v1/sessions/current'
+      type: 'DELETE'
+      dataType: 'json'
+      success: (data, textStatus, jqXHR) ->
+        controller.set('content', undefined)
+        self.transitionTo('sessions.new').then(->
+          SiloStore.reset()
+        )
+
+
+
+    # session = SiloStore.Session.find('current').then((session)->
+    #   session.deleteRecord()
+    #   SiloStore.store.commit()
+    #   console.log 'Transition to Login Page!'
+    # )

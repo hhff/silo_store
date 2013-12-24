@@ -1,6 +1,6 @@
 SiloStore.ApplicationController = Ember.ArrayController.extend
   
-  needs: []
+  needs: ['admin']
 
   actions: {
     getContext: ->

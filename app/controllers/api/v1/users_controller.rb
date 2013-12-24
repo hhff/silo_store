@@ -12,7 +12,11 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    respond_with current_user
+    if user_signed_in?
+      respond_with current_user
+    else
+      render json: {errors: {email:["No Current User Session"]}}
+    end
   end
 
   private

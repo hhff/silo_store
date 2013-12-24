@@ -12,33 +12,39 @@
 
     aside.left-off-canvas-menu
       ul.off-canvas-list
-        li
-          label Menu
+        nav.top-bar 
         li 
-          = linkTo 'dashboard'
-            h6 Dashboard
+          = linkTo 'admin.dashboard'
+            | Dashboard
         li
           = linkTo 'releases'
-            h6 Releases
+            | Releases
             
 
     aside.right-off-canvas-menu
       ul.off-canvas-list
+        nav.top-bar
+        if controllers.admin.isSignedIn
+          li
+            =linkTo 'releases'
+              = controllers.admin.email
+            / No Else Statement because user shouldn't access this without login
         li
-          label Settings
+          =linkTo 'releases'
+            | Releases
         li
-          label Connect Panel
+          =linkTo 'releases'
+            | Releases
         li
-          label Company Details
-    .row
-      .small-6
-        if currentUser.isSignedIn
-          h6= currentUser.email
-        else
-          h6 Not Logged In
-      .small-6
-        = linkTo 'sessions.destroy'
-          | Logout
+          =linkTo 'releases'
+            | Releases
+        li
+          = linkTo 'sessions.destroy'
+            .button.full-width Log Out
+
+
+
+
 
     = outlet
 

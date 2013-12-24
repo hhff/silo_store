@@ -8,7 +8,7 @@ SiloStore::Application.routes.draw do
     namespace :v1 do
       resources :releases
       resources :users, only: [:create, :show]
-      resources :sessions, only: [:create, :destroy]
+      resources :sessions, only: [:show, :create, :destroy]
     end
   end
 

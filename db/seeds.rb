@@ -9,8 +9,14 @@
 
 puts "Seeding..."
 
-user = User.create(
-  :email => "user@example.com", 
+user1 = User.create(
+  :email => "user1@example.com", 
+  :password => "password", 
+  :password_confirmation => "password"
+)
+
+user2 = User.create(
+  :email => "user2@example.com", 
   :password => "password", 
   :password_confirmation => "password"
 )
@@ -23,7 +29,7 @@ release = Release.create(
   upc_ean: "UPC-EAN-HERE"
 )
 
-release.user = user
+release.user = user1
 release.save
 
 release = Release.create(
@@ -34,7 +40,7 @@ release = Release.create(
   upc_ean: "UPC-EAN-HERE"
 )
 
-release.user = user
+release.user = user2
 release.save
 
 puts "Complete!"

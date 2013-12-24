@@ -999,12 +999,14 @@ $body-bg: #E6E7E8;
   bottom:0;
 }
 
-$sub-bar-color: #D1D3D4;
+
+$mid-gray: #D1D3D4;
+$dark-gray: #414042;
 
 nav{
 
   &.sub{
-    background-color:$sub-bar-color;
+    background-color:$mid-gray;
   }
 }
 
@@ -1024,6 +1026,58 @@ nav{
   }
 }
 
+//TYPE
+
 .white-text{
   color:white;
+}
+
+// BUTTONS
+
+.button, button{
+  border-bottom: 6px solid #0079a1;
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 100 !important;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+
+  &.full-width{
+    width:100%;
+  }
+}
+
+// SIDE MENUS
+
+.left-off-canvas-menu, .right-off-canvas-menu{
+  background-color: $mid-gray;
+}
+
+.right-off-canvas-menu{
+  ul.off-canvas-list{
+
+
+    li:nth-last-child(1){
+      a{
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+ul.off-canvas-list {
+  li{
+    height:45px;
+
+    a{
+      height:45px;
+      color: black;
+      font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 100 !important;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      line-height: 2;
+    }
+  }
 }

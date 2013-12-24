@@ -1,13 +1,18 @@
 # For more information see: http://emberjs.com/guides/routing/
 
 SiloStore.Router.map ()->
-  @resource 'releases', ()->
-    @route 'show', path: '/:release_id'
-    @route 'update', path: '/:release_id/edit'
-    @route 'new'
+  @route 'frontend', path: '/'
 
-  @route 'dashboard', path: '/'
-  @route 'settings'
+  @resource 'admin', ()->
+
+    @resource 'releases', ()->
+      @route 'index', path: '/'
+      @route 'show', path: '/:release_id'
+      @route 'update', path: '/:release_id/edit'
+      @route 'new'
+
+    @route 'dashboard'
+    @route 'settings'
 
   @resource 'users', ()->
     @route 'new'
@@ -15,4 +20,3 @@ SiloStore.Router.map ()->
   @resource 'sessions', ()->
     @route 'new'
     @route 'destroy'
-

@@ -1,8 +1,8 @@
 .row
-  .small-12.columns
+  .small-12.large-4.large-offset-4.columns
     h3 Log In
   form submit="logIn"
-    .small-12.columns
+    .small-12.large-4.large-offset-4.columns
       Ember.TextField valueBinding="email" placeholder="Email" type="text"
       Ember.TextField valueBinding="password" placeholder="Password" type="text"
 

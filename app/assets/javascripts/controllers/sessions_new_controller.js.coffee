@@ -1,17 +1,15 @@
 SiloStore.SessionsNewController = Ember.ObjectController.extend
 
+  needs: ['admin']
+
   actions:{
     logIn: ->
+      self = @
+      content = @content
+
       @content.save().then(->
-
-        console.log 'Session Saved!'
-
-        userJSON = @content.toJSON()
-        userJSON.id = 'current'
-
-        object = @store.load(SiloStore.User, userJSON)
-        user = SiloStore.User.find 'current'
-
+        self.get('controllers.admin').set('content', content);
+        self.transitionToRoute 'releases.index'
       )
 
   }

@@ -1,13 +1,13 @@
-Ember.Application.initializer
+# Ember.Application.initializer
   
-  name: 'currentUser'
+#   name: 'currentUser'
 
-  initialize: (container) ->
+#   initialize: (container) ->
 
-    store = container.lookup 'store:main'
-    user = SiloStore.User.find 'current'
+#     store = container.lookup 'store:main'
+#     user = SiloStore.User.find 'current'
 
-    container.lookup('controller:currentUser').set('content', user)
-    container.typeInjection('controller', 'currentUser', 'controller:currentUser')
+#     container.lookup('controller:currentUser').set('content', user)
+#     container.typeInjection('controller', 'currentUser', 'controller:currentUser')
 
-    console.log 'Initializer Working!'
+#     console.log 'Initializer Working!'
