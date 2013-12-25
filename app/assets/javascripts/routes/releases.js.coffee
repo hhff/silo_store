@@ -1,3 +1,6 @@
+SiloStore.ReleasesRoute = Ember.Route.extend
+  enter: -> @controllerFor('admin').set('currentPage', 'Releases')
+
 SiloStore.ReleasesIndexRoute = Ember.Route.extend
   model: -> SiloStore.Release.find()
 

@@ -1,8 +1,7 @@
 SiloStore.AdminRoute = Ember.Route.extend
 
   enter: ->
-    adminController = @controllerFor 'admin'
-    if adminController.get('isSignedIn') == null
+    if @controllerFor('admin').get('isSignedIn') == null
       @transitionTo 'sessions.new'
 
 #   # model: -> SiloStore.User.find 'current'

@@ -4,7 +4,7 @@
     h3= name
 .row
   .small-4.columns
-    img src="https://dl.dropboxusercontent.com/s/0mczrnyluji0f5w/artwork.png"
+    =image-loader imageSrc="https://dl.dropboxusercontent.com/s/0mczrnyluji0f5w/artwork.png"
   .small-8.columns
     h6= release_date
     h6= upc_ean

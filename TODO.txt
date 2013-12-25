@@ -8,13 +8,15 @@ TODO
 
   Protect from Forgery!!
 
+  Showing all records when logout not completed.
+
 - File Uploads
 
 - OAuth
 
 - Spree
 
-
+- Moment.JS
 
 PRODUCTION
 
