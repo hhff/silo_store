@@ -3,7 +3,9 @@
     h3 Log In
   form submit="logIn"
     .small-12.large-4.large-offset-4.columns
+
       Ember.TextField valueBinding="email" placeholder="Email" type="text"
+      = errors.email
       Ember.TextField valueBinding="password" placeholder="Password" type="text"
 
       button.small-12.columns Log In

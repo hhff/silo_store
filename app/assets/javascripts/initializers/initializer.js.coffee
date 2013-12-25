@@ -1,13 +1,11 @@
-# Ember.Application.initializer
+Ember.Application.initializer
   
-#   name: 'admin'
+  name: 'admin'
 
-#   initialize: (container) ->
+  initialize: (container) ->
 
-#     store = container.lookup 'store:main'
-#     user = SiloStore.User.find 'current'
+    attributes = $('meta[name="current-user"]').attr('content')
 
-#     container.lookup('controller:admin').set('content', user)
-#     # container.typeInjection('controller', 'currentUser', 'controller:currentUser')
-
-#     console.log 'Initializer Working!'
+    if attributes
+      user = SiloStore.User.find 'current'
+      controller = container.lookup('controller:admin').set('content', user)

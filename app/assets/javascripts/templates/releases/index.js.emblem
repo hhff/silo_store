@@ -8,3 +8,5 @@
         h6= release.name
         h6= release.release_date
         h6= release.is_private
+= else
+  | No releases!
