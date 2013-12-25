@@ -21,12 +21,11 @@ class Api::V1::SessionsController < ApplicationController
       }, status: :created
       
     else
-
       render json: {
         errors: {
           email: ["invalid email or password"]
         }
-      }
+      }, status: :unprocessable_entity
 
 
     end

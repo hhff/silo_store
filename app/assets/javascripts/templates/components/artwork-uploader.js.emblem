@@ -1,0 +1,2 @@
+form action="/images" enctype="multipart/form-data" method="post"
+  input#artwork-uploader type="file" name="image[imagefile]"

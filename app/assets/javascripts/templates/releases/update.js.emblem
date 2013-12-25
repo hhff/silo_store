@@ -9,6 +9,6 @@
       Ember.TextField valueBinding="upc_ean" placeholder="UPC / EAN" type="text"
       Ember.TextField valueBinding="is_private" placeholder="Visibility" type="text"
 
-    =linkTo "releases.show" this
+    =link-to "releases.show" this
       .button Back
     button Update

@@ -18,7 +18,7 @@
     h6 Skinny Dipping
 
 .row.bottom-buttons
-  =linkTo "releases.index"
+  =link-to "releases.index"
     .button Back
-  =linkTo "releases.update" this
+  =link-to "releases.update" this
     .button.right Edit

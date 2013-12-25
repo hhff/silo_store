@@ -1,6 +1,7 @@
 # For more information see: http://emberjs.com/guides/routing/
 
 SiloStore.Router.map ()->
+
   @route 'frontend', path: '/'
 
   @resource 'admin', ()->
@@ -14,13 +15,8 @@ SiloStore.Router.map ()->
     @route 'dashboard'
     @route 'settings'
 
-
-
-
   @resource 'users', ()->
     @route 'new'
-
-
 
   @resource 'sessions', ()->
     @route 'new'

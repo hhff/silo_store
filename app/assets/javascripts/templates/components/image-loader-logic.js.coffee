@@ -2,7 +2,7 @@ SiloStore.ImageLoaderComponent = Ember.Component.extend
   
   bindLoading: (->
     loader = @.$().find('.loader')
-    content = @.$().find('.content').fadeOut(0)
+    content = @.$().find('.content')
 
     content.load(->
       loader.fadeOut(400, ->

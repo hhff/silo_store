@@ -1,5 +1,5 @@
 = each release in controller
-  = linkTo "releases.show" release
+  = link-to "releases.show" release
     .row.hover-row.padded
       .small-3.columns
         =image-loader imageSrc="https://dl.dropboxusercontent.com/s/0mczrnyluji0f5w/artwork.png"

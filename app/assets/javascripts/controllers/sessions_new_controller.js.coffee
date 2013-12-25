@@ -9,7 +9,6 @@ SiloStore.SessionsNewController = Ember.ObjectController.extend
 
       @content.save().then(->
         self.get('controllers.admin').set('content', content);
-        self.transitionToRoute 'releases.index'
+        self.transitionToRoute 'admin.dashboard'
       )
-
   }

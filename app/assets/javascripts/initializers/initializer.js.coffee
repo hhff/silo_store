@@ -4,8 +4,9 @@ Ember.Application.initializer
 
   initialize: (container) ->
 
+    store = container.lookup('store:main')
     attributes = $('meta[name="current-user"]').attr('content')
 
     if attributes
-      user = SiloStore.User.find 'current'
+      user = store.find('user', 'current')
       controller = container.lookup('controller:admin').set('content', user)

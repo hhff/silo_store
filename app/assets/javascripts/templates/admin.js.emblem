@@ -15,10 +15,10 @@
       ul.off-canvas-list
         nav.top-bar 
         li 
-          = linkTo 'admin.dashboard'
+          = link-to 'admin.dashboard'
             | Dashboard
         li
-          = linkTo 'releases'
+          = link-to 'releases'
             | Releases
             
 
@@ -27,25 +27,21 @@
         nav.top-bar
         if isSignedIn
           li
-            =linkTo 'releases'
+            =link-to 'releases'
               = email
             / No Else Statement because user shouldn't access this without login
         li
-          =linkTo 'releases'
+          =link-to 'releases'
             | Releases
         li
-          =linkTo 'releases'
+          =link-to 'releases'
             | Releases
         li
-          =linkTo 'releases'
+          =link-to 'releases'
             | Releases
         li
-          = linkTo 'sessions.destroy'
+          = link-to 'sessions.destroy'
             .button.full-width Log Out
-
-
-
-
 
     = outlet
 

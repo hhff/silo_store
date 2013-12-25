@@ -1,7 +1,9 @@
-# SiloStore.Store = DS.Store.extend
-#   adapter: DS.RESTAdapter.create({ namespace: 'api/v1' })
+# http://emberjs.com/guides/models/using-the-store/
 
+DS.ActiveModelAdapter.reopen
+  namespace: 'api/v1'
 
 SiloStore.Store = DS.Store.extend
-  adapter: DS.ActiveModelAdapter.reopen
-    namespace: 'api/v1'
+  # Override the default adapter with the `DS.ActiveModelAdapter` which
+  # is built to work nicely with the ActiveModel::Serializers gem.
+  adapter: '_ams'
