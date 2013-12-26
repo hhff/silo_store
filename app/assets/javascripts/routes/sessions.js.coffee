@@ -20,7 +20,7 @@ SiloStore.SessionsDestroyRoute = Ember.Route.extend
       dataType: 'json'
       success: (data, textStatus, jqXHR) ->
         $('meta[name=current-user]').remove();
-        controller.set('content', undefined)
+        controller.set('content', null)
         self.transitionTo('sessions.new').then(->
           SiloStore.reset()
         )

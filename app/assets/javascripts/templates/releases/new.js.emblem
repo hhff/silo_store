@@ -9,6 +9,6 @@
       Ember.TextField valueBinding="upc_ean" placeholder="UPC / EAN" type="text"
       Ember.TextField valueBinding="is_private" placeholder="Visibility" type="text"
 
-      = artwork-uploader
+      = artwork-uploader action="setImageID"
 
       button Add Release

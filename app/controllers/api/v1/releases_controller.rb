@@ -1,10 +1,17 @@
 class Api::V1::ReleasesController < ApplicationController
 	respond_to :json
-
   before_filter :authenticate_user!
 
 	def index
-		respond_with current_user.releases
+		@releases = current_user.releases
+
+    @releases.each do |release|
+    	image = Image.find(release.image_id)
+      release['image_url'] = image.imagefile.url
+    end
+
+    respond_with @releases
+
 	end
 
 	def show
@@ -30,7 +37,7 @@ class Api::V1::ReleasesController < ApplicationController
 	private
 
 		def release_params
-			params.require(:release).permit(:name, :artist, :release_date, :is_private, :upc_ean, :user_id)
+			params.require(:release).permit(:name, :artist, :release_date, :is_private, :upc_ean, :user_id, :image_id)
 		end
 
 end

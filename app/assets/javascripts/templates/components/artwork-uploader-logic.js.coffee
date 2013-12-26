@@ -1,6 +1,9 @@
 SiloStore.ArtworkUploaderComponent = Ember.Component.extend
   
   initiateFileuploader: (->
+
+    self = @
+
     @.$().find('#artwork-uploader').fileupload
       dataType: "JSON"
       autoUpload: true
@@ -17,10 +20,15 @@ SiloStore.ArtworkUploaderComponent = Ember.Component.extend
     #       # data.submit()
     #     else
     #       alert("#{file.name} is not a gif, jpeg, or png image file")
-    # progress: (e, data) ->
-    #   if data.context
-    #     progress = parseInt(data.loaded / data.total * 100, 10)
-    #     console.log progress
+      progress: (e, data) ->
+        if data.context
+          progress = parseInt(data.loaded / data.total * 100, 10)
+          console.log progress
+
+      complete: (e, data) ->
+        self.sendAction('action', e.responseJSON.image.id)
+
+
 
   ).on('didInsertElement')
 

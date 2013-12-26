@@ -4,4 +4,8 @@ SiloStore.ReleasesNewController = Ember.ObjectController.extend
     addEntry: ->
       @content.save()
       @transitionToRoute('releases')
+
+    setImageID: (id)->
+      @set('image_id', id)
+
   }

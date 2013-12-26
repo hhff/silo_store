@@ -15,11 +15,10 @@ user1 = User.create(
   :password_confirmation => "password"
 )
 
-user2 = User.create(
-  :email => "user2@example.com", 
-  :password => "password", 
-  :password_confirmation => "password"
-)
+image = Image.create!
+image.imagefile.store!(File.open(File.join(Rails.root, '/public/uploads/image/1/Cover.jpg')))
+image.user = user1
+image.save!
 
 release = Release.create(
   name: "Long Vacation",
@@ -30,17 +29,14 @@ release = Release.create(
 )
 
 release.user = user1
-release.save
+release.image = image
+release.save!
 
-release = Release.create(
-  name: "See Water",
-  artist: "Motion Picture Actress",
-  release_date: DateTime.strptime("09/01/2009 17:00", "%m/%d/%Y %H:%M"),
-  is_private: true,
-  upc_ean: "UPC-EAN-HERE"
+user2 = User.create(
+  :email => "user2@example.com", 
+  :password => "password", 
+  :password_confirmation => "password"
 )
 
-release.user = user2
-release.save
 
 puts "Complete!"

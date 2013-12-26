@@ -6,3 +6,5 @@ SiloStore.Release = DS.Model.extend
   release_date: DS.attr 'string'
   is_private: DS.attr 'boolean'
   artwork: DS.attr 'string'
+  image_id: DS.attr 'string'
+  image_url: DS.attr 'string'

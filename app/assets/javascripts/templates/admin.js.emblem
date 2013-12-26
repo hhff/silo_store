@@ -20,7 +20,9 @@
         li
           = link-to 'releases'
             | Releases
-            
+        li
+          = link-to 'images'
+            | Images            
 
     aside.right-off-canvas-menu
       ul.off-canvas-list

@@ -1,0 +1,21 @@
+= each image in controller
+  .row
+    h5 Image:
+    h5= image.id
+    =image-loader imageSrc=image.url
+
+= else
+  | No Images!
+
+/ = each release in controller
+/   = link-to "releases.show" release
+/     .row.hover-row.padded
+/       .small-3.columns
+/         =image-loader imageSrc="https://dl.dropboxusercontent.com/s/0mczrnyluji0f5w/artwork.png"
+/       .small-9.columns
+/         h6= release.artist
+/         h6= release.name
+/         h6= release.release_date
+/         h6= release.is_private
+/ = else
+/   | No releases!

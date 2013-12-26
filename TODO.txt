@@ -10,7 +10,12 @@ TODO
 
   Showing all records when logout not completed.
 
+  Remember me sessions
+
 - File Uploads
+  NProgress
+  Delete File Uploads on "back"
+
 
 - OAuth
 

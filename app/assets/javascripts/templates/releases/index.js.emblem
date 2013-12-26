@@ -2,7 +2,7 @@
   = link-to "releases.show" release
     .row.hover-row.padded
       .small-3.columns
-        =image-loader imageSrc="https://dl.dropboxusercontent.com/s/0mczrnyluji0f5w/artwork.png"
+        =image-loader imageSrc=release.image_url
       .small-9.columns
         h6= release.artist
         h6= release.name

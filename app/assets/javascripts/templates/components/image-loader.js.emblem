@@ -1,3 +1,2 @@
-h1
-  img.loader src="/assets/loader.gif"
-  img.content src=imageSrc
+img.loader src="/assets/loader.gif"
+img.content src=imageSrc

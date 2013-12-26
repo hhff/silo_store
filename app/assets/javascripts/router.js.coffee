@@ -12,6 +12,9 @@ SiloStore.Router.map ()->
       @route 'update', path: '/:release_id/edit'
       @route 'new'
 
+    @resource 'images', ()->
+      @route 'index', path: '/'
+
     @route 'dashboard'
     @route 'settings'
 
