@@ -20,6 +20,11 @@ image.imagefile.store!(File.open(File.join(Rails.root, '/public/uploads/image/1/
 image.user = user1
 image.save!
 
+track = Track.create(
+  name: "Skinny Dipping",
+  isrc: "ISRC1234"
+)
+
 release = Release.create(
   name: "Long Vacation",
   artist: "Rainbow Chan",
@@ -28,6 +33,10 @@ release = Release.create(
   upc_ean: "UPC-EAN-HERE"
 )
 
+user1.tracks << track
+user1.save!
+
+release.tracks << track
 release.user = user1
 release.image = image
 release.save!

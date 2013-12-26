@@ -10,5 +10,6 @@ SiloStore.SessionsNewController = Ember.ObjectController.extend
       @content.save().then(->
         self.get('controllers.admin').set('content', content);
         self.transitionToRoute 'admin.dashboard'
+        SiloStore.FlashQueue.pushFlash('notice', 'Welcome!');
       )
   }

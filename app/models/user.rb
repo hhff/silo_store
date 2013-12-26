@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :releases
   has_many :images
+  has_many :tracks
 end

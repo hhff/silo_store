@@ -1,20 +1,16 @@
 TODO
 
 - Flash Messages
+  Make work with side menu & scroll
 
 - Devise
-  Tidy this up: http://pivotallabs.com/playing-with-ember-js-and-devise/
-  http://say26.com/using-rails-devise-with-ember-js
-
   Protect from Forgery!!
-
-  Showing all records when logout not completed.
-
   Remember me sessions
 
 - File Uploads
   NProgress
   Delete File Uploads on "back"
+  Style This Component
 
 
 - OAuth

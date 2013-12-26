@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131226072620) do
+ActiveRecord::Schema.define(version: 20131226105913) do
 
   create_table "images", force: true do |t|
     t.string   "type"
@@ -36,6 +36,18 @@ ActiveRecord::Schema.define(version: 20131226072620) do
     t.integer  "image"
     t.string   "image_url"
   end
+
+  create_table "tracks", force: true do |t|
+    t.string   "name"
+    t.string   "isrc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "release_id"
+    t.integer  "user_id"
+  end
+
+  add_index "tracks", ["release_id"], name: "index_tracks_on_release_id"
+  add_index "tracks", ["user_id"], name: "index_tracks_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

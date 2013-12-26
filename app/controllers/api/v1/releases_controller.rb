@@ -15,7 +15,11 @@ class Api::V1::ReleasesController < ApplicationController
 	end
 
 	def show
-		respond_with Release.find(params[:id])
+    release = Release.find(params[:id])
+    image = Image.find(release.image_id)
+    release['image_url'] = image.imagefile.url
+
+		respond_with release
 	end 
 
 	def create

@@ -4,20 +4,20 @@
     h3= name
 .row
   .small-4.columns
-    =image-loader imageSrc="https://dl.dropboxusercontent.com/s/0mczrnyluji0f5w/artwork.png"
+    =image-loader imageSrc=image_url
   .small-8.columns
     h6= release_date
     h6= upc_ean
     h6= is_private
 
-.row.hover-row
-  .small-12.columns
-    h6 Milk
-.row.hover-row
-  .small-12.columns
-    h6 Skinny Dipping
+/ .row.hover-row
+/   .small-12.columns
+/     h6 Milk
+/ .row.hover-row
+/   .small-12.columns
+/     h6 Skinny Dipping
 
-.row.bottom-buttons
+.row
   =link-to "releases.index"
     .button Back
   =link-to "releases.update" this

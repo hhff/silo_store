@@ -1,1 +1,5 @@
+SiloStore.FlashView id='flash-view'
+  #message
+    = view.content.message
+
 =outlet

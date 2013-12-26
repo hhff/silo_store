@@ -1,15 +1,18 @@
 .off-canvas-wrap
   .inner-wrap
-    nav.top-bar
-      section.left-small
-        a.left-off-canvas-toggle.menu-icon
-          span
-      section.middle.tab-bar-section
-        h3.title.white-text 
-          = currentPage
-      section.right-small
-        a.right-off-canvas-toggle.menu-icon
-          span
+    .contain-to-grid
+      nav.top-bar
+        section.left-small
+          a.left-off-canvas-toggle.menu-icon
+            span
+
+        section.middle.tab-bar-section
+          h3.title.white-text 
+            = currentPage
+
+        section.right-small
+          a.right-off-canvas-toggle 
+            span Settings
 
     aside.left-off-canvas-menu
       ul.off-canvas-list
@@ -33,8 +36,8 @@
               = email
             / No Else Statement because user shouldn't access this without login
         li
-          =link-to 'releases'
-            | Releases
+          =link-to 'admin.settings'
+            | Settings
         li
           =link-to 'releases'
             | Releases

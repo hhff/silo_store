@@ -999,11 +999,18 @@ $primary-color: #27AAE1;
   bottom:0;
 }
 
-
+$light-gray: #E6E7E8;
 $mid-gray: #D1D3D4;
 $dark-gray: #414042;
 
 nav{
+  &.top-bar{
+
+    section.left-small, section.right-small{
+      border:none;
+      box-shadow:none;
+    }
+  }
 
   &.sub{
     background-color:$mid-gray;
@@ -1070,6 +1077,7 @@ ul.off-canvas-list {
     height:45px;
 
     a{
+      @include single-transition();
       height:45px;
       color: black;
       font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -1078,6 +1086,17 @@ ul.off-canvas-list {
       text-transform: uppercase;
       letter-spacing: 1.5px;
       line-height: 2;
+      border:none;
+
+      &.active{
+        background-color: $light-gray;
+        cursor: default;
+        pointer-events: none;
+      }
+
+      &:hover{
+        background-color: white;
+      }
     }
   }
 }
@@ -1086,4 +1105,42 @@ ul.off-canvas-list {
 
 img.content{
   display:none;
+}
+
+
+// FLASH MESSAGES
+
+#flash-view {
+  position: absolute;
+  width: 100%;
+  z-index: 20;
+  overflow: hidden;
+  top:45px;
+  height:45px;
+  pointer-events:none;
+}
+
+#flash-view #message {
+  color: #fff;
+  line-height: 1.2em;
+  text-align: center;
+  padding: 11px 0;
+
+  height:45px;
+  color: white;
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 100 !important;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 2;
+}
+#flash-view.is-notice #message {
+  background-color: #6c3;
+}
+#flash-view.is-warning #message {
+  background-color: #27AAE1;
+}
+#flash-view.is-error #message {
+  background-color: #f14247;
 }

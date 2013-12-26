@@ -1,8 +1,13 @@
-= link-to "releases" 
-  .button Releases
+nav.top-bar.sub
 
-= link-to "images" 
-  .button Images
+.row
+  = link-to "releases" 
+    .button Releases
 
-= link-to "releases.new" 
-  .button New Release
+  = link-to "images" 
+    .button Images
+
+  = link-to "releases.new" 
+    .button New Release
+
+  .button click="triggerFlash" Trigger Flash
