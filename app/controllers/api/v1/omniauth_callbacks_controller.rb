@@ -14,5 +14,6 @@ class Api::V1::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   alias_method :twitter, :all
   alias_method :soundcloud, :all
+  alias_method :stripe_connect, :all
 
 end

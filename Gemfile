@@ -46,6 +46,7 @@ end
 gem 'twitter'
 gem 'omniauth-twitter'
 gem 'omniauth-soundcloud'
+gem 'omniauth-stripe-connect'
 
 gem 'figaro'
 

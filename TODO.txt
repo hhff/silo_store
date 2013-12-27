@@ -1,5 +1,7 @@
 TODO
 
+- Sticky Top Bar
+
 - Flash Messages
   Make work with side menu & scroll
 
@@ -13,10 +15,17 @@ TODO
   Style This Component
 
 - OAuth
+  Flash Messages on successful connect
+
+- Audio
+  http://waveformjs.org/
+  https://github.com/benalavi/waveform
 
 - Spree
+  Stripe Connect
 
 - Moment.JS
+  Computed Properties
 
 PRODUCTION
 

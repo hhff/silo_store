@@ -7,6 +7,9 @@ nav.top-bar.sub
   a href="/users/auth/soundcloud"
     .button Connect Soundcloud
 
+  a href="/users/auth/stripe_connect"
+    .button Connect Stripe
+
 = each authentication in controller
   = authentication.username
   = authentication.provider

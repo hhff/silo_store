@@ -19,13 +19,13 @@
         nav.top-bar 
         li 
           = link-to 'admin.dashboard'
-            | Dashboard
+            .left-off-canvas-toggle Dashboard
         li
           = link-to 'releases'
-            | Releases
+            .left-off-canvas-toggle Releases
         li
           = link-to 'images'
-            | Images            
+            .left-off-canvas-toggle Images            
 
     aside.right-off-canvas-menu
       ul.off-canvas-list
@@ -33,17 +33,14 @@
         if isSignedIn
           li
             =link-to 'releases'
-              = email
+              .right-off-canvas-toggle= email
             / No Else Statement because user shouldn't access this without login
         li
           =link-to 'admin.settings'
-            | Settings
-        li
-          =link-to 'releases'
-            | Releases
+            .right-off-canvas-toggle Settings
         li
           =link-to 'admin.connect'
-            | Connect
+            .right-off-canvas-toggle Connect
         li
           = link-to 'sessions.destroy'
             .button.full-width Log Out
