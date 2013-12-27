@@ -12,7 +12,6 @@ TODO
   Delete File Uploads on "back"
   Style This Component
 
-
 - OAuth
 
 - Spree
@@ -26,5 +25,6 @@ config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
 EMBER:
 config.ember.variant = :production
+http://stackoverflow.com/questions/14845048/client-side-javascript-app-url-routing-with-no-hash-tag
 
 

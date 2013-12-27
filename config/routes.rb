@@ -1,12 +1,14 @@
 SiloStore::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: 'api/v1/omniauth_callbacks'}
 
   get "main/home"
 
   namespace :api do
     namespace :v1 do
+      get 'connect' => 'connect#index'
       resources :releases
+      resources :authentications, only: [:index]
       resources :tracks, only: [:index]
       resources :images, only: [:create, :show, :index]
       resources :users, only: [:create, :show]

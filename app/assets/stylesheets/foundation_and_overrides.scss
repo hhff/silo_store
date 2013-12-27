@@ -1067,6 +1067,10 @@ nav{
     li:nth-last-child(1){
       a{
         border-bottom: none;
+
+        &:hover{
+          background-color: transparent;
+        }
       }
     }
   }

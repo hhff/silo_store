@@ -42,8 +42,8 @@
           =link-to 'releases'
             | Releases
         li
-          =link-to 'releases'
-            | Releases
+          =link-to 'admin.connect'
+            | Connect
         li
           = link-to 'sessions.destroy'
             .button.full-width Log Out

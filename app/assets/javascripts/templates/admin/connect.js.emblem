@@ -1,0 +1,5 @@
+nav.top-bar.sub
+
+.row
+  a href="/users/auth/twitter"
+    .button Connect Twitter

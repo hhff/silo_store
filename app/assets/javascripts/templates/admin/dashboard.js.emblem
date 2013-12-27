@@ -11,3 +11,5 @@ nav.top-bar.sub
     .button New Release
 
   .button click="triggerFlash" Trigger Flash
+
+  .button click="connectTwitter" Connect Twitter

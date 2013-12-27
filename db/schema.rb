@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131226105913) do
+ActiveRecord::Schema.define(version: 20131227075952) do
+
+  create_table "authentications", force: true do |t|
+    t.string   "provider"
+    t.string   "oauth_token"
+    t.string   "oauth_secret"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "uid"
+    t.string   "username"
+  end
+
+  add_index "authentications", ["user_id"], name: "index_authentications_on_user_id"
 
   create_table "images", force: true do |t|
     t.string   "type"

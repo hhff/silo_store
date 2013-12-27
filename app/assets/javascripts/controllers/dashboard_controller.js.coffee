@@ -6,4 +6,7 @@ SiloStore.AdminDashboardController = Ember.ArrayController.extend
       SiloStore.FlashQueue.pushFlash('warning', 'This is a warning.');
       SiloStore.FlashQueue.pushFlash('error', 'This is an error.');
 
+    connectTwitter: ->
+      alert 'connect twitter!'
+
   }

@@ -17,6 +17,7 @@ SiloStore.Router.map ()->
 
     @route 'dashboard'
     @route 'settings'
+    @route 'connect'
 
   @resource 'users', ()->
     @route 'new'
