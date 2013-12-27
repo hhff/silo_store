@@ -7,12 +7,12 @@
             span
 
         section.middle.tab-bar-section
-          h3.title.white-text 
+          h3.title.white-text.top-bar-text
             = currentPage
 
         section.right-small
-          a.right-off-canvas-toggle 
-            span Settings
+          a.right-off-canvas-toggle.menu-icon
+            span
 
     aside.left-off-canvas-menu
       ul.off-canvas-list

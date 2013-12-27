@@ -45,6 +45,7 @@ end
 
 gem 'twitter'
 gem 'omniauth-twitter'
+gem 'omniauth-soundcloud'
 
 gem 'figaro'
 

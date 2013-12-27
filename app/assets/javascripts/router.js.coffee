@@ -17,7 +17,7 @@ SiloStore.Router.map ()->
 
     @route 'dashboard'
     @route 'settings'
-    @route 'connect'
+    @route 'connect', {queryParams: ['success','provider','username']}
 
   @resource 'users', ()->
     @route 'new'

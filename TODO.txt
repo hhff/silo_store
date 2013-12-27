@@ -27,4 +27,7 @@ EMBER:
 config.ember.variant = :production
 http://stackoverflow.com/questions/14845048/client-side-javascript-app-url-routing-with-no-hash-tag
 
+RAILS:
+Take OAuth Details out of JSON Response for Authentication Serializer
+
 

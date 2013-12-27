@@ -3,3 +3,10 @@ nav.top-bar.sub
 .row
   a href="/users/auth/twitter"
     .button Connect Twitter
+
+  a href="/users/auth/soundcloud"
+    .button Connect Soundcloud
+
+= each authentication in controller
+  = authentication.username
+  = authentication.provider

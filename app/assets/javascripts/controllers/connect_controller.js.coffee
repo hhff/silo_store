@@ -1,4 +1,4 @@
-SiloStore.AdminConnectController = Ember.ObjectController.extend
+SiloStore.AdminConnectController = Ember.ArrayController.extend
   
   actions: {
 

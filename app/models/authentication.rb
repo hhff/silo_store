@@ -6,6 +6,8 @@ class Authentication < ActiveRecord::Base
       authentication.provider = auth.provider
       authentication.uid = auth.uid
       authentication.username = auth.info.nickname
+      authentication.oauth_token = auth.credentials.token
+      authentication.oauth_secret = auth.credentials.secret
     end
   end
 

@@ -6,12 +6,13 @@ class Api::V1::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     authentication.save!
 
     if authentication.persisted?
-      redirect_to '/#/admin/dashboard'
+      redirect_to '/#/admin/connect?success=true&provider='+authentication.provider
     else
-      # Fail
+      redirect_to '/#/admin/connect?success=false'
     end
   end
 
   alias_method :twitter, :all
+  alias_method :soundcloud, :all
 
 end
