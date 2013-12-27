@@ -48,6 +48,9 @@ gem 'omniauth-twitter'
 gem 'omniauth-soundcloud'
 gem 'omniauth-stripe-connect'
 
+
+gem 'spree', github: 'spree/spree', branch: '2-1-stable'
+
 gem 'figaro'
 
 # Use ActiveModel has_secure_password
