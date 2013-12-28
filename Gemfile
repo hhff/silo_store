@@ -28,7 +28,7 @@ gem 'devise'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '~> 4.0.0'
 gem 'jquery-fileupload-rails'
 gem 'carrierwave'
 
@@ -48,8 +48,10 @@ gem 'omniauth-twitter'
 gem 'omniauth-soundcloud'
 gem 'omniauth-stripe-connect'
 
-
+# Spree Stuff
 gem 'spree', github: 'spree/spree', branch: '2-1-stable'
+
+
 
 gem 'figaro'
 

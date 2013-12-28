@@ -40,3 +40,8 @@ RAILS:
 Take OAuth Details out of JSON Response for Authentication Serializer
 
 
+
+
+>> PIPE THO
+
+- Only pipe Master User should have Spree Admin Rights

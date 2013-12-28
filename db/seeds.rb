@@ -33,6 +33,7 @@ release = Release.create(
   upc_ean: "UPC-EAN-HERE"
 )
 
+user1.spree_roles << Spree::Role.find_or_create_by(name: "admin")
 user1.tracks << track
 user1.save!
 
@@ -49,3 +50,6 @@ user2 = User.create(
 
 
 puts "Complete!"
+
+Spree::Core::Engine.load_seed if defined?(Spree::Core)
+Spree::Auth::Engine.load_seed if defined?(Spree::Auth)
