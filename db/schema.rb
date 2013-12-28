@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131227234936) do
+ActiveRecord::Schema.define(version: 20131228011937) do
 
   create_table "authentications", force: true do |t|
     t.string   "provider"
@@ -351,6 +351,7 @@ ActiveRecord::Schema.define(version: 20131227234936) do
     t.integer  "shipping_category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"
@@ -358,6 +359,7 @@ ActiveRecord::Schema.define(version: 20131227234936) do
   add_index "spree_products", ["name"], name: "index_spree_products_on_name"
   add_index "spree_products", ["permalink"], name: "index_spree_products_on_permalink"
   add_index "spree_products", ["permalink"], name: "permalink_idx_unique", unique: true
+  add_index "spree_products", ["user_id"], name: "index_spree_products_on_user_id"
 
   create_table "spree_products_promotion_rules", id: false, force: true do |t|
     t.integer "product_id"

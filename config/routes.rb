@@ -1,5 +1,6 @@
 SiloStore::Application.routes.draw do
 
+  get "products/index"
   # This line mounts Spree's routes at the root of your application.
   # This means, any requests to URLs such as /products, will go to Spree::ProductsController.
   # If you would like to change where this engine is mounted, simply change the :at option to something different.
@@ -15,6 +16,7 @@ SiloStore::Application.routes.draw do
     namespace :v1 do
       get 'connect' => 'connect#index'
       resources :releases
+      resources :products, only: [:index]
       resources :authentications, only: [:index]
       resources :tracks, only: [:index]
       resources :images, only: [:create, :show, :index]

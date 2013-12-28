@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
   has_many :tracks
   has_many :authentications
 
+  has_many :products, :class_name => 'Spree::Product'
+
 end

@@ -33,6 +33,33 @@ release = Release.create(
   upc_ean: "UPC-EAN-HERE"
 )
 
+# SPREE STUFF
+
+shipping_category = Spree::ShippingCategory.create!(:name => 'Default')
+
+property = Spree::Property.create!(:name => 'artist', :presentation => 'Artist')
+
+# I think Prototypes are only for backend?
+prototype = Spree::Prototype.create!(:name => 'Release')
+prototype.properties << property
+prototype.save!
+
+# Create Product (This will eventually be automatic in the Create action for a release!)
+product = Spree::Product.create!(
+  :name => release.name,
+  :price => 7.00,
+  :shipping_category => shipping_category,
+  :available_on => release.release_date,
+)
+
+product.properties << property
+product.set_property('artist', release.artist)
+product.save!
+
+
+# SETUP USERS & ASSOCIATIONS
+
+user1.products << product
 user1.spree_roles << Spree::Role.find_or_create_by(name: "admin")
 user1.tracks << track
 user1.save!
