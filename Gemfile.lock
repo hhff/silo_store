@@ -402,6 +402,7 @@ DEPENDENCIES
   omniauth-soundcloud
   omniauth-stripe-connect
   omniauth-twitter
+  paperclip (~> 3.4.1)
   rails (= 4.0.2)
   sass-rails (~> 4.0.0)
   sdoc

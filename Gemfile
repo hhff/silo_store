@@ -30,7 +30,9 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 4.0.0'
 gem 'jquery-fileupload-rails'
+
 gem 'carrierwave'
+gem "paperclip", '~> 3.4.1'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
