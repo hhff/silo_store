@@ -17,6 +17,5 @@ window.SiloStore = Ember.Application.create()
 
 Ember.FEATURES["query-params"] = true;
 
-
 $ ->
   $(document).foundation()

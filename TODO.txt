@@ -27,6 +27,9 @@ TODO
 - Moment.JS
   Computed Properties
 
+- Seed Data Stuff
+  https://gist.github.com/justthisguy/6395796
+
 PRODUCTION
 
 DEVISE:

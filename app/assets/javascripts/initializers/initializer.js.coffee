@@ -7,8 +7,11 @@ Ember.Application.initializer
     store = container.lookup('store:main')
     controller = container.lookup('controller:admin')
 
-    attributes = $('meta[name="current-user"]').attr('content')
+    userPresent = $('meta[name="current-user"]').attr('content')
 
-    if attributes
+    pipeContext = $('meta[name="pipe-context"]').attr('content')
+
+    if userPresent
       user = store.find('user', 'current')
       controller.set('content', user)
+      console.log controller.get('content')

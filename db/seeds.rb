@@ -6,13 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
 puts "Seeding..."
 
+Spree::Core::Engine.load_seed if defined?(Spree::Core)
+
 user1 = User.create(
-  :email => "user1@example.com", 
-  :password => "password", 
-  :password_confirmation => "password"
+  :email => "hello@siloarts.net", 
+  :password => "grain5grain5", 
+  :password_confirmation => "grain5grain5",
+  :context => "siloarts"
 )
 
 image = Image.create!
@@ -35,7 +37,29 @@ release = Release.create(
 
 # SPREE STUFF
 
-shipping_category = Spree::ShippingCategory.create!(:name => 'Default')
+shipping_category = Spree::ShippingCategory.create!(:name => 'Digital')
+
+shipping_method = Spree::ShippingMethod.new(
+  name: 'Digital',
+  display_on: :both, 
+  calculator_type: "Spree::Calculator::Shipping::FlatRate"
+)
+
+zone = Spree::Zone.create!(name: "World")
+
+countries = Spree::Country.all
+
+countries.each do |country|
+  zone.zone_members.create!(zoneable: country)
+end
+
+
+shipping_method.shipping_categories << shipping_category
+shipping_method.zones << zone
+
+shipping_method.save!
+
+# Setup Dummy Product
 
 property = Spree::Property.create!(:name => 'artist', :presentation => 'Artist')
 
@@ -52,10 +76,21 @@ product = Spree::Product.create!(
   :available_on => release.release_date,
 )
 
+stock_location = Spree::StockLocation.create!(
+  name: "Digital",
+  backorderable_default: true
+)
+
+stock_item = Spree::StockItem.find_by(variant_id: product.master.id)
+
+stock_item.stock_location_id = stock_location.id
+stock_item.backorderable = true
+stock_item.adjust_count_on_hand(50)
+
+product.master.track_inventory = false
 product.properties << property
 product.set_property('artist', release.artist)
 product.save!
-
 
 # SETUP USERS & ASSOCIATIONS
 
@@ -75,8 +110,4 @@ user2 = User.create(
   :password_confirmation => "password"
 )
 
-
 puts "Complete!"
-
-Spree::Core::Engine.load_seed if defined?(Spree::Core)
-Spree::Auth::Engine.load_seed if defined?(Spree::Auth)
