@@ -48,9 +48,12 @@ gem 'omniauth-twitter'
 gem 'omniauth-soundcloud'
 gem 'omniauth-stripe-connect'
 
+gem 'awesome_print'
+
 # Spree Stuff
 gem 'spree', github: 'spree/spree', branch: '2-1-stable'
-
+gem 'spree_gateway', github: 'spree/spree_gateway'
+gem 'spree_digital', :git => 'git://github.com/halo/spree_digital.git', branch: '2-1-stable'
 
 
 gem 'figaro'

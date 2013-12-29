@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131228011937) do
+ActiveRecord::Schema.define(version: 20131229001801) do
 
   create_table "authentications", force: true do |t|
     t.string   "provider"
@@ -164,6 +164,30 @@ ActiveRecord::Schema.define(version: 20131228011937) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "spree_digital_links", force: true do |t|
+    t.integer  "digital_id"
+    t.integer  "line_item_id"
+    t.string   "secret"
+    t.integer  "access_counter"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spree_digital_links", ["digital_id"], name: "index_spree_digital_links_on_digital_id"
+  add_index "spree_digital_links", ["line_item_id"], name: "index_spree_digital_links_on_line_item_id"
+  add_index "spree_digital_links", ["secret"], name: "index_spree_digital_links_on_secret"
+
+  create_table "spree_digitals", force: true do |t|
+    t.integer  "variant_id"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spree_digitals", ["variant_id"], name: "index_spree_digitals_on_variant_id"
 
   create_table "spree_gateways", force: true do |t|
     t.string   "type"
