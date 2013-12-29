@@ -6,7 +6,7 @@ SiloStore.Release = DS.Model.extend
   release_date: DS.attr 'string'
   upc_ean: DS.attr 'string'
   is_private: DS.attr 'boolean'
-  image_url: DS.attr 'string'
+  image: DS.belongsTo('image', {embedded: 'true'})
   tracks: DS.hasMany('track', {embedded: 'true'})
 
 

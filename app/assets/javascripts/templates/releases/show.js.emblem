@@ -5,6 +5,7 @@
     h3= release.name
 .row
   .small-4.columns
+    = image.url
     =image-loader imageSrc=image_url
   .small-8.columns
     h6= release_date

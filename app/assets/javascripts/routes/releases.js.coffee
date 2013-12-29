@@ -11,7 +11,8 @@ SiloStore.ReleasesShowRoute = Ember.Route.extend
   model: (params) ->
     @store.find('release', params.release_id).then((release)->
       release: release,
-      tracks: release.get('tracks')
+      tracks: release.get('tracks'),
+      image: release.get('image')
     )
 
   setupController: (controller, model)->
