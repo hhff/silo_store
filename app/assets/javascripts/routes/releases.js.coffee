@@ -7,9 +7,15 @@ SiloStore.ReleasesIndexRoute = Ember.Route.extend
   setupController: (controller, model)->
     controller.set('content', model)
 
-# SiloStore.ReleasesShowRoute = Ember.Route.extend
-#   model: (params) ->
-#     SiloStore.Release.find(params.release_id)
+SiloStore.ReleasesShowRoute = Ember.Route.extend
+  model: (params) ->
+    @store.find('release', params.release_id).then((release)->
+      release: release,
+      tracks: release.get('tracks')
+    )
+
+  setupController: (controller, model)->
+    controller.set('content', model)
 
 # SiloStore.ReleasesUpdateRoute = Ember.Route.extend
 #   model: (params) ->

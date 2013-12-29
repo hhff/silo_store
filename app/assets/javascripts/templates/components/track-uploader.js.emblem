@@ -1,0 +1,3 @@
+form action="/tracks" enctype="multipart/form-data" method="post"
+  input type="text" name="track[name]"
+  input#artwork-uploader type="file" name="track[audiofile]"

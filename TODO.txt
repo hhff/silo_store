@@ -1,5 +1,8 @@
 TODO
 
+Ember Stuff
+http://mozmonkey.com/2013/12/serializing-embedded-relationships-ember-data-beta/
+
 - Sticky Top Bar
 
 - Flash Messages

@@ -1,7 +1,8 @@
+.button click="sayHi"
 .row
   .small-12.columns
-    h2= artist
-    h3= name
+    h2= release.artist
+    h3= release.name
 .row
   .small-4.columns
     =image-loader imageSrc=image_url
@@ -9,6 +10,9 @@
     h6= release_date
     h6= upc_ean
     h6= is_private
+
+= each tracks
+  h2= name
 
 / .row.hover-row
 /   .small-12.columns

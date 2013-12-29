@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131229005012) do
+ActiveRecord::Schema.define(version: 20131229055558) do
 
   create_table "authentications", force: true do |t|
     t.string   "provider"
@@ -759,6 +759,10 @@ ActiveRecord::Schema.define(version: 20131229005012) do
     t.datetime "updated_at"
     t.integer  "release_id"
     t.integer  "user_id"
+    t.string   "audiofile_file_name"
+    t.string   "audiofile_content_type"
+    t.integer  "audiofile_file_size"
+    t.datetime "audiofile_updated_at"
   end
 
   add_index "tracks", ["release_id"], name: "index_tracks_on_release_id"

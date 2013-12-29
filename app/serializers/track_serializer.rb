@@ -1,3 +1,3 @@
 class TrackSerializer < ActiveModel::Serializer
-  attributes :name, :isrc
+  attributes :id, :name, :isrc, :audiofile
 end

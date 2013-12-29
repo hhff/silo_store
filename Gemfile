@@ -18,6 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 gem "ember-rails", github: "emberjs/ember-rails"
+
 gem 'haml-rails'
 gem 'emblem-rails'
 
@@ -31,8 +32,11 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 4.0.0'
 gem 'jquery-fileupload-rails'
 
+
+# Trying out Paperclip for Audio & Carrierwave for Images.  Leaning toward Paperclip as this is what spree uses.
 gem 'carrierwave'
-gem "paperclip", '~> 3.4.1'
+gem "paperclip", '~> 3.4.1' #Spree Compatible
+
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'

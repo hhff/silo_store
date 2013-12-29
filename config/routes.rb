@@ -18,7 +18,7 @@ SiloStore::Application.routes.draw do
       resources :releases
       resources :products, only: [:index]
       resources :authentications, only: [:index]
-      resources :tracks, only: [:index]
+      resources :tracks, only: [:index, :create]
       resources :images, only: [:create, :show, :index]
       resources :users, only: [:create, :show]
       resources :sessions, only: [:show, :create, :destroy]
