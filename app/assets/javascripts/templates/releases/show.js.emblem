@@ -1,26 +1,19 @@
-.button click="sayHi"
 .row
   .small-12.columns
     h2= release.artist
     h3= release.name
 .row
   .small-4.columns
-    = image.url
-    =image-loader imageSrc=image_url
+    =image-loader imageSrc=image.imagefile
   .small-8.columns
-    h6= release_date
-    h6= upc_ean
-    h6= is_private
+    h6= release.release_date
+    h6= release.upc_ean
+    h6= release.is_private
 
 = each tracks
-  h2= name
-
-/ .row.hover-row
-/   .small-12.columns
-/     h6 Milk
-/ .row.hover-row
-/   .small-12.columns
-/     h6 Skinny Dipping
+  .row.hover-row
+    .small-12.columns
+      h6= name
 
 .row
   =link-to "releases.index"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131229055558) do
+ActiveRecord::Schema.define(version: 20131229103529) do
 
   create_table "authentications", force: true do |t|
     t.string   "provider"
@@ -33,6 +33,10 @@ ActiveRecord::Schema.define(version: 20131229055558) do
     t.string   "imagefile"
     t.string   "url"
     t.integer  "user_id"
+    t.string   "imagefile_file_name"
+    t.string   "imagefile_content_type"
+    t.integer  "imagefile_file_size"
+    t.datetime "imagefile_updated_at"
   end
 
   create_table "releases", force: true do |t|

@@ -17,14 +17,20 @@ user1 = User.create(
   :context => "siloarts"
 )
 
-image = Image.create!
-image.imagefile.store!(File.open(File.join(Rails.root, '/public/uploads/image/1/Cover.jpg')))
+image = Image.create(
+  :imagefile => (File.open(File.join(Rails.root, '/public/uploads/image/1/Cover.jpg')))
+)
 image.user = user1
 image.save!
 
-track = Track.create(
+track1 = Track.create(
   name: "Skinny Dipping",
   isrc: "ISRC1234"
+)
+
+track2 = Track.create(
+  name: "Milk",
+  isrc: "ISRC5678"
 )
 
 release = Release.create(
@@ -96,10 +102,12 @@ product.save!
 
 user1.products << product
 user1.spree_roles << Spree::Role.find_or_create_by(name: "admin")
-user1.tracks << track
+user1.tracks << track1
+user1.tracks << track2
 user1.save!
 
-release.tracks << track
+release.tracks << track1
+release.tracks << track2
 release.user = user1
 release.image = image
 release.save!
