@@ -1,14 +1,14 @@
 .row
   .small-12.columns
-    h2= release.artist
-    h3= release.name
+    h2= artist
+    h3= name
 .row
   .small-4.columns
     =image-loader imageSrc=image.imagefile
   .small-8.columns
-    h6= release.release_date
-    h6= release.upc_ean
-    h6= release.is_private
+    h6= release_date
+    h6= upc_ean
+    h6= is_private
 
 = each tracks
   .row.hover-row

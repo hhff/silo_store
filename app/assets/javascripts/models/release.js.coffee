@@ -12,7 +12,6 @@ SiloStore.Release = DS.Model.extend
 
 
 
-
 # DS.ActiveModelSerializer.reopen
 #   serializeHasMany: (record, json, relationship)->
 #     key = relationship.key

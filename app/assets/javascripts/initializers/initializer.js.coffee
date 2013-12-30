@@ -14,4 +14,3 @@ Ember.Application.initializer
     if userPresent
       user = store.find('user', 'current')
       controller.set('content', user)
-      console.log controller.get('content')

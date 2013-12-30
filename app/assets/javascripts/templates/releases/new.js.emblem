@@ -1,7 +1,7 @@
 .row
   .small-12.columns
     h3 New Release
-  form submit="addEntry"
+  form
     .small-12.columns
       Ember.TextField valueBinding="name" placeholder="Release Name" type="text"
       Ember.TextField valueBinding="artist" placeholder="Artist" type="text"
@@ -11,10 +11,12 @@
 
       = artwork-uploader action="setImageID"
 
-.row
-  .small-12.columns
-    h3 Tracks
+    / .row
+    /   .small-12.columns
+    /     h3 Tracks
 
-    = track-uploader
+    /     = track-uploader
 
-      button Add Release
+.button click="addEntry" Add Release
+.button click="addTrack" Add Track
+.button click="findTracks" Find Tracks

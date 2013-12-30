@@ -5,10 +5,10 @@ class Api::V1::ReleasesController < ApplicationController
 	def index
 		@releases = current_user.releases
 
-    @releases.each do |release|
-    	image = Image.find(release.image_id)
-      release['image_url'] = image.imagefile.url
-    end
+    # @releases.each do |release|
+    # 	image = Image.find(release.image_id)
+    #   release['image_url'] = image.imagefile.url
+    # end
 
     respond_with @releases
 
@@ -16,8 +16,8 @@ class Api::V1::ReleasesController < ApplicationController
 
 	def show
     release = Release.find(params[:id])
-    image = Image.find(release.image_id)
-    release['image_url'] = image.imagefile.url
+    # image = Image.find(release.image_id)
+    # release['image_url'] = image.imagefile.url
 
 		respond_with release
 	end 
@@ -27,7 +27,8 @@ class Api::V1::ReleasesController < ApplicationController
 		@release.user = current_user
 
 		if @release.save
-			respond_with @release
+      render json: { yay: {nice: 'yeah'}}  
+      # respond_with @release
 		else
 			# Didn't work!
 		end
@@ -41,7 +42,7 @@ class Api::V1::ReleasesController < ApplicationController
 	private
 
 		def release_params
-			params.require(:release).permit(:name, :artist, :release_date, :is_private, :upc_ean, :user_id, :image_id)
+			params.require(:release).permit(:name, :artist, :release_date, :is_private, :upc_ean)
 		end
 
 end

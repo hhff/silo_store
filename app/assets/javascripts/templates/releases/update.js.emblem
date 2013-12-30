@@ -12,3 +12,9 @@
     =link-to "releases.show" this
       .button Back
     button Update
+
+.row
+  h3 Tracks
+.row
+  = each track in tracks
+    h6= track.name

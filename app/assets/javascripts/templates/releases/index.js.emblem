@@ -1,8 +1,8 @@
-= each release in controller
+= each release in releases
   = link-to "releases.show" release
     .row.hover-row.padded
       .small-3.columns
-        =image-loader imageSrc=release.image_url
+        =image-loader imageSrc=release.image.imagefile
       .small-9.columns
         h6= release.artist
         h6= release.name
