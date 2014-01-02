@@ -1,4 +1,6 @@
 class Track < ActiveRecord::Base
+  attr_accessor :tempfile
+
   belongs_to :release
   belongs_to :user
 

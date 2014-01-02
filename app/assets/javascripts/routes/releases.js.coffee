@@ -36,11 +36,7 @@ SiloStore.ReleasesNewRoute = Ember.Route.extend
   })
 
   afterModel: (release, transtion)->
-    release.get('tracks').addObject(@store.createRecord 'track',{
-      name: 'pushed Track after model'  
-    }).pushObject(@store.createRecord 'track',{
-      name: 'Blepshdflksahdjfafter model'  
-    })
+    release.get('tracks').addObject @store.createRecord 'track'
 
   setupController: (controller, model)->
     controller.set('content', model)

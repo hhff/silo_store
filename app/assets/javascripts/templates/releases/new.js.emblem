@@ -9,14 +9,27 @@
       Ember.TextField valueBinding="upc_ean" placeholder="UPC / EAN" type="text"
       Ember.TextField valueBinding="is_private" placeholder="Visibility" type="text"
 
-      = artwork-uploader action="setImageID"
+.row
+  .small-12.columns
+    h3 Artwork
+.row
+  .small-12.columns
+    = artwork-uploader action="setImageTempfile"
 
-    / .row
-    /   .small-12.columns
-    /     h3 Tracks
+.row 
+  .small-12.columns
+    h3 Tracks
 
-    /     = track-uploader
+= each track in tracks
+  .row
+    .small-12.columns
+      Ember.TextField valueBinding="track.name" placeholder="Track Name" type="text"
+      Ember.TextField valueBinding="track.isrc" placeholder="ISRC" type="text"
+      = track-uploader action="setTrackTempfile" model=track
+.row
+  .small-12.columns
+    .button click="addTrack" Add Track +
 
-.button click="addEntry" Add Release
-.button click="addTrack" Add Track
-.button click="findTracks" Find Tracks
+.row
+  .small-12.columns
+    .button click="addEntry" Add Release

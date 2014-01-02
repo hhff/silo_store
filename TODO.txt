@@ -17,6 +17,8 @@ https://github.com/emberjs/data/blob/master/TRANSITION.md#underscored-keys-_id-a
   NProgress
   Delete File Uploads on "back"
   Style This Component
+  Namespace Temp Directory by Context
+  Delete Temp Files After Time
 
 - OAuth
   Flash Messages on successful connect

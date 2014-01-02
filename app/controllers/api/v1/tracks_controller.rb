@@ -8,11 +8,11 @@ class Api::V1::TracksController < ApplicationController
   end
 
   def create
-    track = Track.new(track_params)
-    track.user = current_user
+    @track = Track.new(track_params)
+    @track.user = current_user
 
-    if track.save
-      render json: track, status: :created
+    if @track.save
+      render json: @track, status: :created
     else
       render json: {response: 'No Save SORRY'}
     end
@@ -22,7 +22,7 @@ class Api::V1::TracksController < ApplicationController
   private
 
     def track_params
-      params.require(:track).permit(:name, :audiofile)
+      params.require(:track).permit( :audiofile, :isrc)
     end
     
 end

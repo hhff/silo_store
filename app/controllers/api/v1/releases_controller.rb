@@ -4,31 +4,29 @@ class Api::V1::ReleasesController < ApplicationController
 
 	def index
 		@releases = current_user.releases
-
-    # @releases.each do |release|
-    # 	image = Image.find(release.image_id)
-    #   release['image_url'] = image.imagefile.url
-    # end
-
     respond_with @releases
 
 	end
 
 	def show
     release = Release.find(params[:id])
-    # image = Image.find(release.image_id)
-    # release['image_url'] = image.imagefile.url
-
 		respond_with release
 	end 
 
 	def create
+    puts params[:release][:tracks_attributes]
+
 		@release = Release.new(release_params)
+
 		@release.user = current_user
 
+    @release.tracks.each do |track|
+      track.user = current_user
+      track.audiofile = (File.open(File.join(Rails.root, 'tmp', 'uploads', track.tempfile)))
+    end
+
 		if @release.save
-      render json: { yay: {nice: 'yeah'}}  
-      # respond_with @release
+      respond_with :api, :v1, @release
 		else
 			# Didn't work!
 		end
@@ -39,10 +37,10 @@ class Api::V1::ReleasesController < ApplicationController
 		respond_with Release.destroy(params[:id])
 	end
 
-	private
+private
 
-		def release_params
-			params.require(:release).permit(:name, :artist, :release_date, :is_private, :upc_ean)
-		end
+	def release_params
+		params.require(:release).permit(:name, :artist, :release_date, :is_private, :upc_ean, tracks_attributes: [:name, :isrc, :tempfile], images_attributes: [:tempfile])
+	end
 
 end

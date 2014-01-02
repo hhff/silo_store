@@ -3,3 +3,4 @@
 SiloStore.Track = DS.Model.extend
   name: DS.attr 'string'
   isrc: DS.attr 'string'
+  tempfile: DS.attr 'string'

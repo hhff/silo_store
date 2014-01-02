@@ -8,46 +8,15 @@ SiloStore.ArtworkUploaderComponent = Ember.Component.extend
       dataType: "JSON"
       autoUpload: true
       add: (e, data) ->
-        data.url = '/api/v1/images'
+        data.url = '/api/v1/temporary'
         data.submit()
 
-    #     types = /(\.|\/)(gif|jpe?g|png)$/i
-    #     file = data.files[0]
-    #     if types.test(file.type) || types.test(file.name)
-    #       alert 'nice'
-    #       # data.context = $(tmpl("template-upload", file))
-    #       # $('#new_painting').append(data.context)
-    #       # data.submit()
-    #     else
-    #       alert("#{file.name} is not a gif, jpeg, or png image file")
       progress: (e, data) ->
         if data.context
           progress = parseInt(data.loaded / data.total * 100, 10)
           console.log progress
 
       complete: (e, data) ->
-        self.sendAction('action', e.responseJSON.image.id)
-
-
+        self.sendAction('action', e.responseJSON.tempfile)
 
   ).on('didInsertElement')
-
-
-
-
-  # jQuery ->
-  # $('#new_painting').fileupload
-  #   dataType: "script"
-  #   add: (e, data) ->
-  #     types = /(\.|\/)(gif|jpe?g|png)$/i
-  #     file = data.files[0]
-  #     if types.test(file.type) || types.test(file.name)
-  #       data.context = $(tmpl("template-upload", file))
-  #       $('#new_painting').append(data.context)
-  #       data.submit()
-  #     else
-  #       alert("#{file.name} is not a gif, jpeg, or png image file")
-  #   progress: (e, data) ->
-  #     if data.context
-  #       progress = parseInt(data.loaded / data.total * 100, 10)
-  #       data.context.find('.bar').css('width', progress + '%')

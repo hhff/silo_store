@@ -1,5 +1,6 @@
 SiloStore::Application.routes.draw do
 
+  get "temporary/create"
   get "products/index"
   # This line mounts Spree's routes at the root of your application.
   # This means, any requests to URLs such as /products, will go to Spree::ProductsController.
@@ -15,6 +16,7 @@ SiloStore::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'connect' => 'connect#index'
+      resources :temporary, only: [:create]
       resources :releases
       resources :products, only: [:index]
       resources :authentications, only: [:index]
