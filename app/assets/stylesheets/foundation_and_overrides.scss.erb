@@ -1102,6 +1102,22 @@ label{
   text-transform: uppercase;
 }
 
+span.has-tip{
+  text-align: center;
+  font-size: 12px;
+  float: right;
+  padding-right: 24px;
+  border:none;
+
+  &.tip-left{
+    float:right !important;
+  }
+
+  &:hover{
+    border:none;
+  }
+}
+
 // COMPONENTS
 
 // ARTWORK UPLOADER
@@ -1153,6 +1169,66 @@ form#artwork-uploader-form{
   input#artwork-uploader[type="file"]{
     opacity: 0;  
     height:100%;
+    z-index: 3;
+    cursor:pointer;
+    position: absolute;
+  }
+}
+
+
+
+// TRACK UPLOADER
+
+form#track-uploader-form{
+
+  &:hover{
+    #track-uploader-arrow{
+      @include transform(translateY(0px));
+    }
+  }
+
+  #track-uploader-button{
+    @include transition(background-color);
+
+    background: url('<%= asset_path "audio.png" %>') center right no-repeat;
+    background-size: contain;
+    width:100%;
+    height:37px;
+    background-color:white;
+    top: 0;
+    z-index: 1;
+    border: 1px solid #cccccc;
+    @include box-sizing(border-box);
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 34px;
+    padding-left: 10px;
+
+
+    &.uploading{
+      background: url('<%= asset_path "loader.gif" %>') center center no-repeat;
+      background-size:contain;
+    }
+  }
+
+  #track-uploader-arrow{
+    @include transition(all);
+
+    background: url('<%= asset_path "arrow-right.png" %>') center center no-repeat;
+    background-size: contain;
+    width:16px;
+    height:16px;
+    z-index: 2;
+    top: 29px;
+    right: 50px;
+    position: absolute;
+    @include transform(translateX(-20px))
+  }
+
+  input#track-uploader[type="file"]{
+    opacity: 0;  
+    height:37px;
+    margin:none;
     z-index: 3;
     cursor:pointer;
     position: absolute;

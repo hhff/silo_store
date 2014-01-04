@@ -6,6 +6,7 @@
 
       .row.collapse
         label Release Name
+      .row.collapse
         .small-11.columns
           Ember.TextField valueBinding="name" placeholder="Release Name" type="text"
         .small-1.columns.required
@@ -13,6 +14,7 @@
 
       .row.collapse
         label Artist
+      .row.collapse
         .small-11.columns
           Ember.TextField valueBinding="artist" placeholder="Artist" type="text"
         .small-1.columns.required
@@ -20,6 +22,7 @@
 
       .row.collapse
         label Release Date
+      .row.collapse
         .small-11.columns
           Ember.TextField valueBinding="release_date" placeholder="Release Date" type="text"
         .small-1.columns.required
@@ -27,11 +30,13 @@
 
       .row.collapse
         label UPC / EAN
+      .row.collapse
         .small-12.columns
           Ember.TextField valueBinding="upc_ean" placeholder="UPC / EAN" type="text"
 
       .row.collapse
         label Visibility
+      .row.collapse
         .small-11.columns
           Ember.TextField valueBinding="is_private" placeholder="Visibility" type="text"
         .small-1.columns.required
@@ -40,18 +45,6 @@
   .small-12.large-4.columns.left
     label Artwork
     = artwork-uploader action="setImageTempfile"
-
-/ <div class="large-4 columns">
-/       <div class="row collapse">
-/         <label>Input Label</label>
-/         <div class="small-9 columns">
-/           <input type="text" placeholder="small-9.columns" />
-/         </div>
-/         <div class="small-3 columns">
-/           <span class="postfix">.com</span>
-/         </div>
-/       </div>
-/     </div>
 
 .row
   .small-12.columns
@@ -76,8 +69,6 @@
     .small-12.large-11.large-offset-1.columns 
       label Audio File
       = track-uploader action="setTrackTempfile" model=track
-
-
 
 .row
   .small-12.large-4.columns
