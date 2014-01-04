@@ -21,10 +21,10 @@
           = link-to 'admin.dashboard'
             .left-off-canvas-toggle Dashboard
         li
-          = link-to 'releases'
+          = link-to 'releases.index'
             .left-off-canvas-toggle Releases
         li
-          = link-to 'images'
+          = link-to 'images.index'
             .left-off-canvas-toggle Images            
 
     aside.right-off-canvas-menu

@@ -155,6 +155,7 @@ GEM
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
+    chunky_png (1.2.9)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.3)
@@ -167,6 +168,12 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     colorize (0.6.0)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    compass-rails (1.1.2)
+      compass (>= 0.12.2)
     deface (1.0.0)
       colorize (>= 0.5.8)
       nokogiri (~> 1.6.0)
@@ -198,6 +205,7 @@ GEM
     foundation-rails (5.0.2.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
+    fssm (0.2.10)
     gyoku (0.4.6)
       builder (>= 2.1.2)
     haml (4.0.4)
@@ -389,6 +397,7 @@ DEPENDENCIES
   awesome_print
   carrierwave
   coffee-rails (~> 4.0.0)
+  compass-rails
   devise
   ember-rails!
   emblem-rails

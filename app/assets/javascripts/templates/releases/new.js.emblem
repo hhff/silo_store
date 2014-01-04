@@ -2,19 +2,61 @@
   .small-12.columns
     h3 New Release
   form
-    .small-12.columns
-      Ember.TextField valueBinding="name" placeholder="Release Name" type="text"
-      Ember.TextField valueBinding="artist" placeholder="Artist" type="text"
-      Ember.TextField valueBinding="release_date" placeholder="Release Date" type="text"
-      Ember.TextField valueBinding="upc_ean" placeholder="UPC / EAN" type="text"
-      Ember.TextField valueBinding="is_private" placeholder="Visibility" type="text"
+    .small-12.large-8.columns.right
+
+      .row.collapse
+        label Release Name
+        .small-11.columns
+          Ember.TextField valueBinding="name" placeholder="Release Name" type="text"
+        .small-1.columns.required
+          span.postfix *
+
+      .row.collapse
+        label Artist
+        .small-11.columns
+          Ember.TextField valueBinding="artist" placeholder="Artist" type="text"
+        .small-1.columns.required
+          span.postfix *
+
+      .row.collapse
+        label Release Date
+        .small-11.columns
+          Ember.TextField valueBinding="release_date" placeholder="Release Date" type="text"
+        .small-1.columns.required
+          span.postfix *
+
+      .row.collapse
+        label UPC / EAN
+        .small-12.columns
+          Ember.TextField valueBinding="upc_ean" placeholder="UPC / EAN" type="text"
+
+      .row.collapse
+        label Visibility
+        .small-11.columns
+          Ember.TextField valueBinding="is_private" placeholder="Visibility" type="text"
+        .small-1.columns.required
+          span.postfix *         
+
+  .small-12.large-4.columns.left
+    label Artwork
+    = artwork-uploader action="setImageTempfile"
+
+/ <div class="large-4 columns">
+/       <div class="row collapse">
+/         <label>Input Label</label>
+/         <div class="small-9 columns">
+/           <input type="text" placeholder="small-9.columns" />
+/         </div>
+/         <div class="small-3 columns">
+/           <span class="postfix">.com</span>
+/         </div>
+/       </div>
+/     </div>
 
 .row
   .small-12.columns
-    h3 Artwork
-.row
-  .small-12.columns
-    = artwork-uploader action="setImageTempfile"
+    label Description
+    Ember.TextArea valueBinding="description" placeholder="Description" type="text"
 
 .row 
   .small-12.columns
@@ -22,14 +64,27 @@
 
 = each track in tracks
   .row
-    .small-12.columns
+    .large-1.columns
+      label #
+      h4 1.
+    .small-12.large-6.columns
+      label Track Name
       Ember.TextField valueBinding="track.name" placeholder="Track Name" type="text"
+    .small-12.large-5.columns
+      label ISRC
       Ember.TextField valueBinding="track.isrc" placeholder="ISRC" type="text"
+    .small-12.large-11.large-offset-1.columns 
+      label Audio File
       = track-uploader action="setTrackTempfile" model=track
-.row
-  .small-12.columns
-    .button click="addTrack" Add Track +
+
+
 
 .row
-  .small-12.columns
-    .button click="addEntry" Add Release
+  .small-12.large-4.columns
+    .button.full-width.red Back
+
+  .small-12.large-4.columns
+    .button.full-width.blue click="addTrack" Add Track +
+
+  .small-12.large-4.columns
+    .button.full-width.green.invalid click="addEntry" Add Release
