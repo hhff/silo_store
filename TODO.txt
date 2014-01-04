@@ -4,6 +4,8 @@ Ember Stuff
 http://mozmonkey.com/2013/12/serializing-embedded-relationships-ember-data-beta/
 https://github.com/emberjs/data/blob/master/TRANSITION.md#underscored-keys-_id-and-_ids
 
+  Break Required Field into Component
+
 - Releases
   Add Description Text
 

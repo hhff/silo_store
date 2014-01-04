@@ -13,4 +13,7 @@ SiloStore.ReleasesNewController = Ember.ObjectController.extend
     addTrack: ()->
       @content.get('tracks').pushObject(@store.createRecord 'track')
 
+    logHi: ()->
+      console.log 'hi~!'
+
   }

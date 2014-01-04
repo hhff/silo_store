@@ -40,7 +40,16 @@
         .small-11.columns
           Ember.TextField valueBinding="is_private" placeholder="Visibility" type="text"
         .small-1.columns.required
-          span.postfix *         
+          span.postfix *
+
+      .row.collapse
+        label Required Field Component
+      .row.collapse
+        = required-field model=release
+
+
+
+
 
   .small-12.large-4.columns.left
     label Artwork
