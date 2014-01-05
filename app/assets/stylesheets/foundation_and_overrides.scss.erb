@@ -1017,9 +1017,31 @@ $primary-color: #27AAE1;
 
 // START
 
+//REMOVE THIS WHEN ALL CONTENT IS TALLER THAN ALL SCREENS
+
+html{
+  height:100%;
+}
+
 body{
+  height:100%;
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
+
+.ember-view, .off-canvas-wrap, {
+  height:100%;
+}
+
+.off-canvas-wrap{
+  overflow:auto;
+  overflow-x: hidden;
+}
+
+.inner-wrap{
+  min-height: 100%;
+}
+
+//END OF REMOVE THIS
 
 .bottom-buttons{
   position:fixed;
