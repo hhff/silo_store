@@ -4,6 +4,13 @@ SiloStore.Router.map ()->
 
   @route 'frontend', path: '/'
 
+  @resource 'products', ()->
+    @route 'index', path: '/'
+    @route 'show', path: '/:product_id'
+
+
+  @route 'cart'
+
   @resource 'admin', ()->
 
     @resource 'releases', ()->

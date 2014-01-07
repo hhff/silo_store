@@ -1,2 +1,14 @@
 #frontend
-  h6 Frontend here
+  .row
+    .small-12.columns
+      h6 Frontend here
+
+  .row
+    .small-12.columns
+      h3 Products
+
+  = each product in products
+    = link-to "products.show" product
+      .row.hover-row
+        .small-12.columns
+          h6= product.name

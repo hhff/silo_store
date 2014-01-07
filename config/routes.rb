@@ -16,9 +16,10 @@ SiloStore::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'connect' => 'connect#index'
+      resources :orders, only: [:index]
       resources :temporary, only: [:create]
       resources :releases
-      resources :products, only: [:index]
+      resources :products, only: [:index, :show]
       resources :authentications, only: [:index]
       resources :tracks, only: [:index, :create]
       resources :images, only: [:create, :show, :index]

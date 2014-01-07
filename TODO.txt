@@ -4,6 +4,16 @@ Ember Stuff
 http://mozmonkey.com/2013/12/serializing-embedded-relationships-ember-data-beta/
 https://github.com/emberjs/data/blob/master/TRANSITION.md#underscored-keys-_id-and-_ids
 
+UI Stuff
+http://tympanus.net/Development/AnimatedSVGIcons/
+http://tympanus.net/Development/AnimatedCheckboxes/
+
+Website Builder (Gem?)
+http://froont.com/
+http://www.divshot.com/
+https://webflow.com/
+
+
   Break Required Field into Component
 
 - Releases

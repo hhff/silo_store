@@ -1,0 +1,8 @@
+.row
+  .small-12.columns
+    h3 Individual PDP
+    h6= name
+
+.row
+  .small-12.columns
+    .button.full-width click="addToCart" Add to cart
