@@ -1,2 +1,16 @@
-#frontend
-  h6 Frontend here
+.row
+  .small-12.columns
+    h3 Cart
+
+.row
+  .small-12.columns
+    h6 Order Number:
+    h6= order.number
+
+.row
+  .small-12.columns
+    h4 Line Items
+    = each lineItem in lineItems
+      .row
+        .small-12.columns
+          h6= lineItem.quantity

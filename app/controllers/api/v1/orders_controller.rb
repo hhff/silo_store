@@ -1,14 +1,13 @@
-class Api::V1::OrdersController < Spree::Api::BaseController
+class Api::V1::OrdersController < Spree::StoreController
   respond_to :json
   # before_filter :authenticate_user!
   # before_filter :authenticate_api
   # include Spree::Api::OrdersHelpers
 
 
-
-  def index
+  def show
     @order = current_order
-    respond_with @order
+    respond_with @order, serializer: OrderSerializer
   end
 
   private

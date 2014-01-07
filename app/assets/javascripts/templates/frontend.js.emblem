@@ -3,6 +3,10 @@
     .small-12.columns
       h6 Frontend here
 
+      = link-to "cart"
+        .button Cart
+
+
   .row
     .small-12.columns
       h3 Products
