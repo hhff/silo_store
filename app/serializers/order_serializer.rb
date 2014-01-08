@@ -1,5 +1,5 @@
 class OrderSerializer < ActiveModel::Serializer
-  attributes :id, :number
+  attributes :id, :number, :token
 
   embed :ids, include: :true
 

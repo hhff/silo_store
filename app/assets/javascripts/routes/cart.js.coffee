@@ -6,6 +6,9 @@ SiloStore.CartRoute = Ember.Route.extend
       lineItems: order.get 'lineItem'
     )
 
+  setupController: (controller, model)->
+    controller.set('content', model)
+
 
   # afterModel: (order, transition)->
   #   order.get 'lineItems'

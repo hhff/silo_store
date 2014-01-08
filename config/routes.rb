@@ -16,9 +16,11 @@ SiloStore::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'connect' => 'connect#index'
+      # post '/orders/:id/line_items' => 'line_items#create'
       resources :orders, only: [:show]
       resources :temporary, only: [:create]
       resources :releases
+      resources :line_items, only: [:create]
       resources :products, only: [:index, :show]
       resources :authentications, only: [:index]
       resources :tracks, only: [:index, :create]

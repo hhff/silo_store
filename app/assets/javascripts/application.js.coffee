@@ -20,7 +20,7 @@ Ember.FEATURES["query-params"] = true;
 $ ->
   $(document).foundation()
 
-  spreeApiKey = $('meta[name="spree-api-key"').attr('content')
+  spreeApiKey = $('meta[name="spree-guest-api-key"').attr('content')
 
   $.ajaxPrefilter((options, originalOptions, xhr)->
     xhr.setRequestHeader('X-Spree-Token', spreeApiKey);  

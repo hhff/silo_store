@@ -112,10 +112,18 @@ release.user = user1
 release.image = image
 release.save!
 
-user2 = User.create(
-  :email => "user2@example.com", 
+# GUEST FOR FRONTEND API
+
+guest = User.create(
+  :email => "guest@example.com", 
   :password => "password", 
   :password_confirmation => "password"
 )
+
+guest.spree_roles << Spree::Role.find_or_create_by(name: "user")
+guest.generate_spree_api_key!
+SiloStore::Application::SPREE_GUEST_API_KEY = guest.spree_api_key
+
+
 
 puts "Complete!"
