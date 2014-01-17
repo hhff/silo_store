@@ -1,0 +1,36 @@
+.row
+  .large-12.columns
+    h1 SHIPPING ADDRESS
+
+.row
+  .large-12.columns
+    Ember.TextField valueBinding="email" placeholder="Email" type="text"
+    
+    Ember.TextField valueBinding="ship_address.firstname" placeholder="First Name" type="text"
+    Ember.TextField valueBinding="ship_address.lastname" placeholder="Last Name" type="text"
+
+    Ember.TextField valueBinding="ship_address.address1" placeholder="Street Address" type="text"
+    Ember.TextField valueBinding="ship_address.address2" placeholder="Street Address" type="text"
+
+    Ember.TextField valueBinding="ship_address.city" placeholder="City" type="text"
+
+    Ember.TextField valueBinding="ship_address.country_id" placeholder="Country" type="text"
+    Ember.TextField valueBinding="ship_address.state_id" placeholder="State" type="text"
+    Ember.TextField valueBinding="ship_address.zipcode" placeholder="Zip" type="text"
+
+    Ember.TextField valueBinding="ship_address.phone" placeholder="Phone" type="text"
+
+
+.row
+  .large-6.columns
+    = link-to "cart"
+      .button.full-width.blue Back To Cart
+
+  .large-6.columns
+    if payment_required
+      .button.full-width.green click="saveAndContinue" Continue to Payment
+
+    else
+      = link-to "frontend"
+        .button.full-width.green Complete!
+

@@ -20,9 +20,13 @@ Ember.Application.initializer
   name: 'initializerOrder'
   
   initialize: (container) ->
-
+    
     store = container.lookup('store:main')
     controller = container.lookup('controller:cart')
 
-    order = store.find('order', 'current')
-    controller.set('content', order)
+    model = store.find('order', 'current').then((order)->
+      order:order,
+      lineItems: order.get 'lineItem'
+    )
+
+    controller.set('content', model)

@@ -1,0 +1,4 @@
+form#track-uploader-form enctype="multipart/form-data" method="post"
+  input#track-uploader type="file" name="file[data]"
+  #track-uploader-button
+  #track-uploader-arrow

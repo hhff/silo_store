@@ -98,6 +98,16 @@ product.properties << property
 product.set_property('artist', release.artist)
 product.save!
 
+gateway = Spree::PaymentMethod.create!(
+  type: "Spree::Gateway::StripeGateway",
+  name: "Stripe Gateway for Silo Arts",
+  environment: "development"
+)
+
+gateway.set_preference(:server,  'test')
+gateway.set_preference(:publishable_key,  ENV['STRIPE_PUBLIC_KEY'])
+gateway.set_preference(:secret_key,  ENV['STRIPE_API_KEY'])
+
 # SETUP USERS & ASSOCIATIONS
 
 user1.products << product

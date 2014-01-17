@@ -160,6 +160,7 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.3)
       climate_control (>= 0.0.3, < 1.0)
+    coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -251,6 +252,7 @@ GEM
       treetop (~> 1.4.8)
     memoizable (0.4.0)
       thread_safe (~> 0.1.3)
+    method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.5.2)
     minitest (4.7.5)
@@ -298,6 +300,10 @@ GEM
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.3)
+    pry (0.9.12.4)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     rabl (0.8.4)
       activesupport (>= 2.3.14)
     rack (1.5.2)
@@ -343,6 +349,7 @@ GEM
       sass-rails
       thor (~> 0.14)
     simple_oauth (0.2.0)
+    slop (3.4.7)
     sprockets (2.10.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -412,6 +419,7 @@ DEPENDENCIES
   omniauth-stripe-connect
   omniauth-twitter
   paperclip (~> 3.4.1)
+  pry
   rails (= 4.0.2)
   sass-rails (~> 4.0.0)
   sdoc

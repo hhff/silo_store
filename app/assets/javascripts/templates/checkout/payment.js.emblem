@@ -1,0 +1,41 @@
+.row
+  .large-12.columns
+    h1 PAYMENT
+
+.row
+  .large-12.columns
+    h6 Powered By Stripe
+
+    = each payment in payments
+      form#stripe-form
+        input placeholder="Card Number" type="text" data-stripe="number" value="4242-4242-4242-4242"
+        input placeholder="Expiration Month" type="text" data-stripe="exp_month" value="08"
+        input placeholder="Expiration Year" type="text" data-stripe="exp_year" value="2016"
+        input placeholder="CCV" type="text" data-stripe="cvc" value="123"
+        input placeholder="Zip / Postal Code" type="text" data-stripe="address_zip" value="11211"
+
+      h6 Amount
+      h6= payment.payment_source.cc_type
+
+.row
+  .large-12.columns
+    .button.full-width.blue click="createToken target='view'" Create Token
+
+
+
+
+
+.row
+  .large-6.columns
+    = link-to "cart"
+      .button.full-width.blue Back To Cart
+  .large-6.columns
+    if payment_required
+      = link-to "frontend"
+        .button.full-width.green Continue to Payment
+    else
+      = link-to "frontend"
+        .button.full-width.green Complete!
+
+/ script type="text/javascript" src="https://js.stripe.com/v2/"
+

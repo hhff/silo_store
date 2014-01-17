@@ -1005,13 +1005,14 @@ $primary-color: #27AAE1;
     &::-webkit-input-placeholder { @content; } 
 }
 
-@mixin transition($properties: all, $duration: .3s, $easing: ease-out) {
+@mixin transition($properties: all, $duration: .3s, $easing: ease-out, $delay: 0s) {
   @if length($properties) > 1 {
     transition-property: $properties;
     transition-duration: $duration;
     transition-timing-function: $easing;
+    transition-delay: $delay;
   } @else {
-    transition: $properties $duration $easing;
+    transition: $properties $duration $easing $delay;
   }
 }
 
@@ -1060,6 +1061,20 @@ $dark-red: #E04D62;
 
 $mid-green: #39B54A;
 $dark-green: #009444;
+
+$main-font: 'benton-regular';
+
+
+@font-face {
+    font-family: 'benton-regular';
+    src: url('benton-regular/BentonModDisp-Regular.eot');
+    src: url('benton-regular/BentonModDisp-Regular.eot?#iefix') format('embedded-opentype'),
+         url('benton-regular/BentonModDisp-Regular.woff') format('woff'),
+         // url('../fonts/gibson-italic-webfont.ttf') format('truetype'),
+         url('benton-regular/BentonModDisp-Regular.svg#benton-regular') format('svg');
+    font-weight: lighter;
+    font-style: normal;
+}
 
 nav{
   &.top-bar{
@@ -1390,4 +1405,75 @@ img.content{
 }
 #flash-view.is-error #message {
   background-color: #f14247;
+}
+
+//FRONT END!
+
+#frontend{
+  @include transition(opacity, 1.5s);
+  height:100%;
+
+  &.hidden{
+    @include opacity(0);
+  }
+
+  h1{
+    font-family: $main-font;
+    font-size: 4rem;
+    letter-spacing: 0.5rem;
+    margin-top: 0.75em;
+  }
+
+  h5{
+    font-family: $main-font;
+    font-size: 1.2rem;
+    line-height: 2.25rem;
+    letter-spacing: 0.2rem;
+  }
+
+
+  .nav-spacer{
+    height:$topbar-height;
+  }
+
+  .contain-to-grid{
+    @include transition(all, 1.5s, ease-in-out, 2s);
+    z-index: 999;
+    position:absolute;
+    bottom:0;
+
+    &.fixed{
+      position:fixed;
+      bottom:auto;
+    }
+
+    &.hidden{
+      @include transform(translateY($topbar-height))
+    }
+  }
+
+  .row{
+    &.screen-height{
+      height:100%;
+
+      &:nth-child(odd){
+        @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+      }
+    }
+
+
+
+    .columns{
+      &.lasso-sibling{
+        margin-bottom: -100%;
+      }
+
+      &.vertical-lasso{
+        // display: block;
+        top:50%;
+        @include transform(translateY(-50%));
+        position:relative;
+      }
+    }
+  }
 }

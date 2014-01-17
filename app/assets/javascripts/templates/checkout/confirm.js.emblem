@@ -1,0 +1,23 @@
+.row
+  .large-12.columns
+    h1 CONFIRM
+
+.row
+  .large-4.columns
+    h6 items
+  .large-4.columns
+    h6 shipping address
+  .large-4.columns
+    h6 credit card
+
+
+
+.row
+  .large-6.columns
+    = link-to "cart"
+      .button.full-width.blue Back To Cart
+  .large-6.columns
+    .button.full-width.green click="saveAndContinue" Complete Order!
+
+/ script type="text/javascript" src="https://js.stripe.com/v2/"
+

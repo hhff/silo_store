@@ -1,18 +1,59 @@
-#frontend
-  .row
+#frontend.hidden
+  .row.screen-height
+    .large-2.large-offset-5.text-center.columns.vertical-lasso
+      img src="./assets/silo.png"
+
+      / = link-to "cart"
+      /   .button Cart
+
+  .nav-spacer
+
+  .contain-to-grid.hidden
+    nav.top-bar data-topbar=""
+      ul.title-area
+        li.name
+          h6 SILO ARTS & RECORDS
+
+      section.top-bar-section
+        ul.right
+          li
+            h6 CART
+
+        ul.left
+          li
+            h6 SOCIALS
+
+  .row.screen-height
+    .large-12.columns.lasso-sibling
+      h1 ABOUT US
+
+    .large-8.large-offset-2.columns.left.vertical-lasso.text-center
+      h5 Silo Arts & Records is a forward thinking internet record label, based one half in NYC, and one half in Brisbane, Australia. Dedicated to releasing the highest quality audio goods, the Silo Arts roster spans a diverse range of sounds, with a focus on originality, integrity and artistic vision.
+
+  .row.screen-height
+    .small-12.columns
+      h1 ARTISTS
+    .small-12.columns
+      h6 Frontend here
     .small-12.columns
       h6 Frontend here
 
-      = link-to "cart"
-        .button Cart
 
-
-  .row
+  .row.screen-height
     .small-12.columns
-      h3 Products
+      h1 STORE
 
-  = each product in products
-    = link-to "products.show" product
-      .row.hover-row
-        .small-12.columns
-          h6= product.name
+      = each product in products
+        = link-to "products.show" product
+          .row.hover-row
+            .small-12.columns
+              h6= product.name
+
+
+  .row.screen-height
+    .small-12.columns
+      h1 LICENSING
+
+  .row.screen-height
+    .small-12.columns
+      h1 CONTACT

@@ -4,5 +4,8 @@
     h6= name
 
 .row
-  .small-12.columns
-    .button.full-width click="addToCart" Add to cart
+  .small-6.columns
+    = link-to "frontend"
+      .button.full-width.blue Back
+  .small-6.columns
+    .button.full-width.green click="addToCart" Add to cart
