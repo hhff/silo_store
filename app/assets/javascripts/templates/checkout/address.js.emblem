@@ -5,6 +5,9 @@
 .row
   .large-12.columns
     Ember.TextField valueBinding="email" placeholder="Email" type="text"
+
+.row
+  .large-12.columns
     
     Ember.TextField valueBinding="ship_address.firstname" placeholder="First Name" type="text"
     Ember.TextField valueBinding="ship_address.lastname" placeholder="Last Name" type="text"

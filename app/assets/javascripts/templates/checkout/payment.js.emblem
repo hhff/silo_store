@@ -4,6 +4,10 @@
 
 .row
   .large-12.columns
+    Ember.TextField valueBinding="email" placeholder="Email" type="text"
+
+.row
+  .large-12.columns
     h6 Powered By Stripe
 
     = each payment in payments
@@ -17,25 +21,10 @@
       h6 Amount
       h6= payment.payment_source.cc_type
 
-.row
-  .large-12.columns
-    .button.full-width.blue click="createToken target='view'" Create Token
-
-
-
-
 
 .row
   .large-6.columns
     = link-to "cart"
       .button.full-width.blue Back To Cart
   .large-6.columns
-    if payment_required
-      = link-to "frontend"
-        .button.full-width.green Continue to Payment
-    else
-      = link-to "frontend"
-        .button.full-width.green Complete!
-
-/ script type="text/javascript" src="https://js.stripe.com/v2/"
-
+    .button.full-width.green click="createToken target='view'" Confirm Order

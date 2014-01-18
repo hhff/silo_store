@@ -3,12 +3,27 @@ SiloStore.CheckoutPaymentController = Ember.ObjectController.extend
   actions: {
     setupPaymentSource: (stripeResponse)->
 
+      # This part is essential...
+      mapCC = (ccType) ->
+        if (ccType == 'MasterCard') 
+          'mastercard'
+        else if (ccType == 'Visa') 
+          'visa'
+        else if (ccType == 'American Express')
+          'amex'
+        else if (ccType == 'Discover')
+          'discover'
+        else if (ccType == 'Diners Club')
+          'dinersclub'
+        else if (ccType == 'JCB')
+          'jcb'
+
       payment = @get('content').get('payments').get('firstObject')
       if !payment.get('source')
         source = @store.createRecord 'source', {
           month: stripeResponse.card.exp_month
           year: stripeResponse.card.exp_year
-          cc_type: stripeResponse.card.type
+          cc_type: mapCC(stripeResponse.card.type)
           last_digits: stripeResponse.card.last4
           gateway_payment_profile_id: stripeResponse.id
         }
@@ -22,7 +37,10 @@ SiloStore.CheckoutPaymentController = Ember.ObjectController.extend
 
 
     saveAndContinue: ->
-      @get('content').save()
-      console.log 'saved...'
-      # @transitionToRoute('frontend')
+      self = @
+
+      @get('content').set('state', 'confirm')
+      @get('content').save().then(()->
+        self.transitionToRoute('checkout.confirm')
+      )
   }

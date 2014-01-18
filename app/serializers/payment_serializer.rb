@@ -1,5 +1,5 @@
 class PaymentSerializer < ActiveModel::Serializer
-  attributes :id, :amount, :order_id, :payment_method_id, :state
+  attributes :id, :amount, :order_id, :payment_method_id, :state, :response_code
 
   embed :ids, include: :true
 

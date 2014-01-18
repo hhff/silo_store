@@ -9,6 +9,10 @@ class Api::V1::OrdersController < Spree::StoreController
 
     if order.update_attributes(order_params)
 
+      if order.completed?
+        order.process_payments!
+      end
+
       respond_with(order) do |format|
         format.json { render json: order, serializer: OrderSerializer }
       end
@@ -26,11 +30,16 @@ class Api::V1::OrdersController < Spree::StoreController
     end
 
     def order_params
-      params.require(:order).permit(:name, :number, :email, :state, :item_total, 
+      params.require(:order).permit(:name, :number, :email, :state, :item_total, :completed_at,
         ship_address_attributes: [:firstname, :lastname, :address1, :address2, :city, :zipcode, :phone, :country_id, :state_id], 
         payments_attributes: [:amount, :payment_method_id, source_attributes: [:last_digits, :month, :year, :cc_type, :gateway_payment_profile_id]],
       )
     end
+
+    # def default_bill_address
+    #   :firstname => "Default", :lastname => "Default", :address1 => "Default", :city => "Default", :zipcode => "12345", :country_id => 49, :state_id => 48, :phone => "5512213610"
+    # end
+
 end
 
 # Order has many payments

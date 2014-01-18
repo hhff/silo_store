@@ -26,6 +26,7 @@ gem 'emblem-rails'
 gem 'devise'
 
 gem 'pry'
+gem 'better_errors'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
