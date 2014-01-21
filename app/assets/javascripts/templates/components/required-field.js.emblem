@@ -1,5 +1,0 @@
-.row.collapse
-  .small-11.columns
-    Ember.TextField valueBinding="model.name" placeholder=placeholder type="text"
-  .small-1.columns.required
-    span.postfix *

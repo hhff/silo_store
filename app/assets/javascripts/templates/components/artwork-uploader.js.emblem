@@ -1,4 +1,0 @@
-form#artwork-uploader-form enctype="multipart/form-data" method="post"
-  input#artwork-uploader type="file" name="file[data]"
-  #artwork-uploader-button
-  #artwork-uploader-arrow
