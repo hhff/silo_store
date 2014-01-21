@@ -1,7 +1,21 @@
-# SiloStore.CheckoutRoute = Ember.Route.extend
-#   enter: -> @controllerFor('admin').set('currentPage', 'Releases')
+# CHECKOUT PARENT ROUTE
+SiloStore.CheckoutRoute = Ember.Route.extend
+  model: -> @store.find('order', 'current')
 
+  setupController: (controller, model)->
+    controller.set('content', model)
 
+# CART ROUTE
+SiloStore.CheckoutCartRoute = Ember.Route.extend
+  model: ->
+    @store.find('order', 'current')
+
+  setupController: (controller, model)->
+    controller.set('content', model)
+
+  enter: -> @controllerFor('checkout').set('checkoutState', 'Cart')
+
+# ADDRESS ROUTE
 SiloStore.CheckoutAddressRoute = Ember.Route.extend
   model: -> @store.find('order', 'current')
 
@@ -13,6 +27,9 @@ SiloStore.CheckoutAddressRoute = Ember.Route.extend
       ship = @store.createRecord 'shipAddress'
       order.set('ship_address', ship)
 
+  enter: -> @controllerFor('checkout').set('checkoutState', 'Address')
+
+# PAYMENT ROUTE
 SiloStore.CheckoutPaymentRoute = Ember.Route.extend
   model: -> @store.find('order', 'current')
 
@@ -35,8 +52,14 @@ SiloStore.CheckoutPaymentRoute = Ember.Route.extend
       # Change this when adding more payment methods!
       payment.set('payment_method_id', 1)
 
+  enter: -> @controllerFor('checkout').set('checkoutState', 'Payment')
+
+
+# CONFIRM ROUTE
 SiloStore.CheckoutConfirmRoute = Ember.Route.extend
   model: -> @store.find('order', 'current')
 
   setupController: (controller, model)->
-    controller.set('content', model)  
+    controller.set('content', model)
+
+  enter: -> @controllerFor('checkout').set('checkoutState', 'Confirm')

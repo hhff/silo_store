@@ -3,16 +3,12 @@
     .large-2.large-offset-5.text-center.columns.vertical-lasso
       img src="./assets/silo.png"
 
-      / = link-to "cart"
-      /   .button Cart
-
   .nav-spacer
 
-  .contain-to-grid.hidden
+  .contain-to-grid
     nav.top-bar data-topbar=""
       ul.title-area
-        li.name
-          h6 SILO ARTS & RECORDS
+        li.logo
 
       section.top-bar-section
         ul.right
@@ -20,8 +16,12 @@
             h6 CART
 
         ul.left
-          li
-            h6 SOCIALS
+          li.social.facebook
+          li.social.twitter
+          li.social.soundcloud
+          li.social.instagram
+
+
 
   .row.screen-height
     .large-12.columns.lasso-sibling

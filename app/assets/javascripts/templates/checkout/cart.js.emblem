@@ -1,0 +1,67 @@
+.row
+  .small-12.columns
+    h3 Cart
+
+.row
+  .small-12.columns
+    h6 Order Number:
+    h6= number
+
+.row
+  .large-6.columns
+    if payment_required
+      h6 payment required
+    else
+      h6 payment not required
+  .large-6.columns
+    if shipment_required
+      h6 shipment required
+    else
+      h6 shipment not required
+
+.row
+  .small-12.columns
+    h4 Line Items
+
+.row
+  .large-4.large-offset-2.columns
+    h6 ITEM
+  .large-2.columns.text-center
+    h6 PRICE
+  .large-2.columns.text-center
+    h6 QTY
+  .large-2.columns.text-center
+    h6 TOTAL
+
+= each line_item in line_items
+  .row
+    .large-2.columns
+      = image-loader
+    .large-4.columns
+      h6 Name
+      h6 Artist
+      h6 Variant
+    .large-2.columns.text-center
+      h6= line_item.price
+    .large-2.columns.text-center
+      h6= line_item.quantity
+    .large-2.columns.text-center
+      h6= line_item.total
+
+.row
+  .large-6.columns
+    = link-to "frontend"
+      .button.full-width.blue Continue Shopping
+      
+  .large-6.columns
+    if shipment_required
+      = link-to "checkout.shipping"
+        .button.full-width.green Continue to Shipping
+    else 
+      if payment_required
+        = link-to "frontend"
+          .button.full-width.green Continue to Payment
+      else
+        = link-to "frontend"
+          .button.full-width.green Complete!
+

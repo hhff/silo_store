@@ -26,7 +26,7 @@
 
 .row
   .large-6.columns
-    = link-to "cart"
+    = link-to "checkout.cart"
       .button.full-width.blue Back To Cart
 
   .large-6.columns

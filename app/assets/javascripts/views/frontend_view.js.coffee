@@ -6,12 +6,14 @@ SiloStore.FrontendView = Ember.View.extend
 
   domReady: ->
     # Global Variables Here
+    preloader = $(document).find('#preloader')
     frontend = @.$().find('#frontend')
     navbar = frontend.find('.top-bar')
     navbarHeight = navbar.height()
     navbarContainer = frontend.find('.contain-to-grid')
     navbarSpacer = frontend.find('.nav-spacer')
     screens = frontend.find('.screen-height')
+    minHeight = 600;
 
     # Utility Functions Here
     scroll = ->
@@ -25,11 +27,11 @@ SiloStore.FrontendView = Ember.View.extend
     setupScreens = ->
       screens.each ->
         myHeight = $(window).height()
-        $(@).height(myHeight - navbarHeight)
+        $(@).height(Math.max(myHeight - navbarHeight, minHeight))
 
     loadIn = ->
+      preloader.addClass('loaded')
       frontend.removeClass('hidden')
-      navbarContainer.removeClass('hidden')
 
     # Setup Bindings After All Functions Declared
     setupBindings = ->

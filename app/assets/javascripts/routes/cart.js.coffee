@@ -1,4 +1,4 @@
-SiloStore.CartRoute = Ember.Route.extend
+SiloStore.CheckoutCartRoute = Ember.Route.extend
 
   model: ->
     @store.find('order', 'current')

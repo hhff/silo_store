@@ -14,7 +14,7 @@ SiloStore.ProductsShowController = Ember.ObjectController.extend
         currentQuantity = lineItem.get('quantity')
         lineItem.set('quantity', currentQuantity+1)
         lineItem.save().then(
-          @transitionToRoute 'cart'          
+          @transitionToRoute 'checkout.cart'          
         )
       else
         lineItem = @store.createRecord('lineItem')
@@ -22,7 +22,7 @@ SiloStore.ProductsShowController = Ember.ObjectController.extend
         lineItem.set('quantity', quantity)
         lineItem.save().then(->
           order.get('line_items').pushObject(lineItem)
-          @transitionToRoute 'cart'
+          @transitionToRoute 'checkout.cart'
         )
 
       # @get('controllers.cart').send('addVariantToCurrentOrder', 1, 1)

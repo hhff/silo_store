@@ -8,9 +8,8 @@ SiloStore.Router.map ()->
     @route 'index', path: '/'
     @route 'show', path: '/:product_id'
 
-  @route 'cart'
-
   @resource 'checkout', ()->
+    @route 'cart'
     @route 'address'
     @route 'payment'
     @route 'confirm'

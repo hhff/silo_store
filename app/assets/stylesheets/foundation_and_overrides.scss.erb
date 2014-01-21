@@ -1051,7 +1051,7 @@ body{
 
 $light-gray: #E6E7E8;
 $mid-gray: #D1D3D4;
-$dark-gray: #414042;
+$dark-gray: #333333;
 
 $mid-blue: #27AAE1;
 $dark-blue: #269CCE;
@@ -1409,8 +1409,72 @@ img.content{
 
 //FRONT END!
 
+@mixin animation($q) {
+    -webkit-animation: $q;
+    -moz-animation: $q;
+    -o-animation: $q;
+    -ms-animation: $q;
+    animation: $q;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@include keyframes(rotate) {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+  }
+}
+
+#preloader{
+  @include transition(opacity, 1.5s, ease);
+  width:100%;
+  height:100%;
+  position:fixed;
+  z-index:9999;
+  background-color:$dark-gray;
+
+  &.loaded{
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #logo{
+    width:50px;
+    height:50px;
+    top: 50%;
+    left: 50%;
+    margin-left:-25px;
+    margin-top:-25px;
+    position:relative;
+    display: inline-block;
+
+    background: url('<%= asset_path "nav-icons/logo.png" %>') center center no-repeat;
+    background-size:contain;
+    @include animation(rotate 3s ease-in-out 0s infinite normal);    
+  }
+}
+
 #frontend{
-  @include transition(opacity, 1.5s);
+  @include transition(opacity, 1.5s, ease, 1.5s);
   height:100%;
 
   &.hidden{
@@ -1437,18 +1501,47 @@ img.content{
   }
 
   .contain-to-grid{
-    @include transition(all, 1.5s, ease-in-out, 2s);
     z-index: 999;
-    position:absolute;
-    bottom:0;
+    margin-top: -$topbar-height;
 
     &.fixed{
       position:fixed;
-      bottom:auto;
+      top:0;
+      margin-top:0;
     }
 
-    &.hidden{
-      @include transform(translateY($topbar-height))
+    nav.top-bar{
+      ul.title-area{
+        li.logo{
+          background: url('<%= asset_path "nav-icons/logo.png" %>') center center no-repeat;
+          background-size:contain;
+          height:45px;
+          width:45px;
+        }
+      }
+
+      li.social{
+        height:45px;
+        width:45px;
+
+        &.facebook{
+          background: url('<%= asset_path "nav-icons/facebook.png" %>') center center no-repeat;
+          background-size:contain;
+        }
+        &.twitter{
+          background: url('<%= asset_path "nav-icons/twitter.png" %>') center center no-repeat;
+          background-size:contain;
+        }
+        &.soundcloud{
+          background: url('<%= asset_path "nav-icons/soundcloud.png" %>') center center no-repeat;
+          background-size:contain;
+        }
+        &.instagram{
+          background: url('<%= asset_path "nav-icons/instagram.png" %>') center center no-repeat;
+          background-size:contain;
+        }
+      }
+
     }
   }
 
@@ -1456,12 +1549,10 @@ img.content{
     &.screen-height{
       height:100%;
 
-      &:nth-child(odd){
-        @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
-      }
+      // &:nth-child(odd){
+      //   @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+      // }
     }
-
-
 
     .columns{
       &.lasso-sibling{
@@ -1469,7 +1560,6 @@ img.content{
       }
 
       &.vertical-lasso{
-        // display: block;
         top:50%;
         @include transform(translateY(-50%));
         position:relative;
