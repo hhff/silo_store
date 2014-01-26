@@ -1,4 +1,6 @@
-SiloStore.FrontendController = Ember.ObjectController.extend
+# SiloStore.FrontendController = Ember.ObjectController.extend
 
-  actions: {
-  }
+#   actions: {
+#     sayHi: ->
+#       console.log @get('order').get('item_count')
+#   }

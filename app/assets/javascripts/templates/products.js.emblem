@@ -1,1 +1,4 @@
-= outlet
+#frontend
+  SiloStore.NavbarView contentBinding="this"
+
+  = outlet

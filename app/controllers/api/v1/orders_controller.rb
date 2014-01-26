@@ -31,6 +31,7 @@ class Api::V1::OrdersController < Spree::StoreController
 
     def order_params
       params.require(:order).permit(:name, :number, :email, :state, :item_total, :completed_at,
+        line_items_attributes: [:id, :quantity, :price, :variant_id],
         ship_address_attributes: [:firstname, :lastname, :address1, :address2, :city, :zipcode, :phone, :country_id, :state_id], 
         payments_attributes: [:amount, :payment_method_id, source_attributes: [:last_digits, :month, :year, :cc_type, :gateway_payment_profile_id]],
       )

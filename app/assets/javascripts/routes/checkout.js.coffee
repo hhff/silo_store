@@ -1,6 +1,8 @@
 # CHECKOUT PARENT ROUTE
 SiloStore.CheckoutRoute = Ember.Route.extend
-  model: -> @store.find('order', 'current')
+  model: -> @store.find('order', 'current').then((order)->
+    order:order
+  )
 
   setupController: (controller, model)->
     controller.set('content', model)

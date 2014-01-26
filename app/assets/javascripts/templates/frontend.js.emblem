@@ -1,27 +1,13 @@
-#frontend.hidden
+#frontend
+  / Front end can have .hidden for a fade in
   .row.screen-height
     .large-2.large-offset-5.text-center.columns.vertical-lasso
       img src="./assets/silo.png"
 
-  .nav-spacer
+    .button click="sayHi" Testing
 
-  .contain-to-grid
-    nav.top-bar data-topbar=""
-      ul.title-area
-        li.logo
-
-      section.top-bar-section
-        ul.right
-          li
-            h6 CART
-
-        ul.left
-          li.social.facebook
-          li.social.twitter
-          li.social.soundcloud
-          li.social.instagram
-
-
+  / Broke Navbar into its own view.  Content Binding is an "Order" Object
+  SiloStore.NavbarView contentBinding="order"
 
   .row.screen-height
     .large-12.columns.lasso-sibling
@@ -38,17 +24,17 @@
     .small-12.columns
       h6 Frontend here
 
-
   .row.screen-height
     .small-12.columns
       h1 STORE
 
-      = each product in products
-        = link-to "products.show" product
-          .row.hover-row
-            .small-12.columns
+      .row.collapse
+        = each product in products
+          .small-3.columns.product
+            = link-to "products.show" product
+              =image-loader imageSrc=product.images.firstObject.attachment
+            .text 
               h6= product.name
-
 
   .row.screen-height
     .small-12.columns

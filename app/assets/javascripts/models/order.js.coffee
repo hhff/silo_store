@@ -2,13 +2,13 @@ SiloStore.Order = DS.Model.extend
   number: DS.attr 'string'
   email: DS.attr 'string'
   state: DS.attr 'string'
+  item_count: DS.attr 'number'
   item_total: DS.attr 'number'
   line_items: DS.hasMany('lineItem', {embedded: 'true'})
   ship_address: DS.belongsTo('shipAddress', {embedded: 'true'})
   completed_at: DS.attr 'date'
 
   payments: DS.hasMany('payment', {embedded: 'true'})
-
 
   payment_required: (->
     if @get('item_total') > 0
@@ -58,6 +58,7 @@ SiloStore.OrderSerializer = DS.RESTSerializer.extend
     if hasManyRecords && relationship.options.embedded == 'true'
       json[key] = []
       hasManyRecords.forEach (item, index)->
-        json[key].push(item.serialize())
+        json[key].push(item.serialize({ includeId: true }))
+
     else
       @._super(record, json, relationship)

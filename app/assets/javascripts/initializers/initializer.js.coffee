@@ -15,18 +15,22 @@ Ember.Application.initializer
       user = store.find('user', 'current')
       controller.set('content', user)
 
-Ember.Application.initializer
+# Ember.Application.initializer
 
-  name: 'initializerOrder'
+#   name: 'initializerOrder'
   
-  initialize: (container) ->
+#   initialize: (container, application) ->
     
-    store = container.lookup('store:main')
-    controller = container.lookup('controller:cart')
+#     store = container.lookup('store:main')
+#     # order = store.find('order', 'current').get('content')
 
-    model = store.find('order', 'current').then((order)->
-      order:order,
-      lineItems: order.get 'lineItem'
-    )
+#     # application.register('order:current', order, {singleton: true});
+#     application.inject('view:navbar', 'store', 'store:main');
 
-    controller.set('content', model)
+#     alert 'initializer'
+
+# Ember.Application.initializer
+#   name: 'addStoreToViews'
+
+#   initialize: (container, application) ->
+#     application.inject('view', 'store', 'store:main')

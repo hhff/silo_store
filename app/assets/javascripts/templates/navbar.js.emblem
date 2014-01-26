@@ -1,0 +1,19 @@
+.nav-spacer
+
+.contain-to-grid
+  nav.top-bar data-topbar=""
+    ul.title-area
+      li.logo
+
+    section.top-bar-section
+      ul.left
+        li.social.facebook
+        li.social.twitter
+        li.social.soundcloud
+        li.social.instagram
+
+      ul.right
+        =link-to "checkout.cart"
+          li.cart
+            h5 Cart:
+            h5= order.item_count

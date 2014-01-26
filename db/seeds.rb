@@ -18,7 +18,7 @@ user1 = User.create(
 )
 
 image = Image.create(
-  :imagefile => (File.open(File.join(Rails.root, '/public/uploads/image/1/Cover.jpg')))
+  :imagefile => (File.open(File.join(Rails.root, '/public/uploads/image/1/Cover.png')))
 )
 image.user = user1
 image.save!
@@ -69,6 +69,10 @@ shipping_method.save!
 
 property = Spree::Property.create!(:name => 'artist', :presentation => 'Artist')
 
+coverimage = Spree::Image.create!(
+  :attachment => (File.open(File.join(Rails.root, '/public/uploads/image/1/Cover.png')))
+)
+
 # I think Prototypes are only for backend?
 prototype = Spree::Prototype.create!(:name => 'Release')
 prototype.properties << property
@@ -96,6 +100,7 @@ stock_item.adjust_count_on_hand(50)
 product.master.track_inventory = false
 product.properties << property
 product.set_property('artist', release.artist)
+product.images << coverimage
 product.save!
 
 gateway = Spree::PaymentMethod.create!(

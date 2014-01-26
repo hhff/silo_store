@@ -9,8 +9,8 @@ class Api::V1::ProductsController < ApplicationController
   end
 
   def show
-    @products = current_user.products
-    @product = @products.find(params[:id])
+    # @products = current_user.products
+    @product = Spree::Product.find(params[:id])
     respond_with @product, serializer: ProductSerializer
   end 
 

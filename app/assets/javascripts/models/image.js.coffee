@@ -2,3 +2,4 @@
 
 SiloStore.Image = DS.Model.extend
   tempfile: DS.attr 'string'
+  attachment: DS.attr 'string'

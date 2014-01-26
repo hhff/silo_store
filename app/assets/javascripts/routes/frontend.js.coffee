@@ -1,5 +1,11 @@
 SiloStore.FrontendRoute = Ember.Route.extend
 
-    model: -> @store.findAll('product').then((products)->
-      products: products
-    )
+  model: ->
+    Ember.RSVP.hash({
+      order: @store.find('order', 'current'),
+      products: @store.find('product')
+    })
+
+  setupControler: (model, controller) ->
+    controller.set('content', model)
+

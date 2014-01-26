@@ -1,7 +1,14 @@
 .row
   .small-12.columns
-    h3 Individual PDP
-    h6= name
+    h1= name
+    h5 Artist Name
+    h5= order.number
+
+.row
+  .small-4.columns
+    =image-loader imageSrc=images.firstObject.attachment
+  .small-8.columns
+    h5 Description
 
 .row
   .small-6.columns

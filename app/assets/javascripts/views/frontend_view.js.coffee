@@ -6,7 +6,6 @@ SiloStore.FrontendView = Ember.View.extend
 
   domReady: ->
     # Global Variables Here
-    preloader = $(document).find('#preloader')
     frontend = @.$().find('#frontend')
     navbar = frontend.find('.top-bar')
     navbarHeight = navbar.height()
@@ -30,7 +29,6 @@ SiloStore.FrontendView = Ember.View.extend
         $(@).height(Math.max(myHeight - navbarHeight, minHeight))
 
     loadIn = ->
-      preloader.addClass('loaded')
       frontend.removeClass('hidden')
 
     # Setup Bindings After All Functions Declared
