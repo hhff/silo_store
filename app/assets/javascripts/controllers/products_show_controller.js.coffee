@@ -1,6 +1,7 @@
 SiloStore.ProductsShowController = Ember.ObjectController.extend
 
   actions:{
+
     addToCart: (variantId, quantity)->
 
       quantity = 1
@@ -16,17 +17,20 @@ SiloStore.ProductsShowController = Ember.ObjectController.extend
       if lineItem
         currentQuantity = lineItem.get('quantity')
         lineItem.set('quantity', currentQuantity+1)
-        order.save().then(
-          alert 'update line item'
-          self.transitionToRoute 'checkout.cart'          
+        order.save().then(()->
+            SiloStore.FlashQueue.pushFlash('notice', self.get('content').get('name')+' added to Cart!')
+            self.transitionToRoute 'checkout.cart'
+        ,()->
+            alert 'save failed'
         )
       else
         lineItem = @store.createRecord('lineItem')
         lineItem.set('variantId', variantId)
         lineItem.set('quantity', quantity)
         lineItems.pushObject(lineItem)
-        order.save().then(->
-          alert 'create line item'
-          self.transitionToRoute 'checkout.cart'
+        order.save().then(()->
+            self.transitionToRoute 'checkout.cart'
+        ,()->
+            alert 'save failed'
         )
   }

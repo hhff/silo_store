@@ -1273,6 +1273,41 @@ form#track-uploader-form{
 }
 
 
+//CART QUANTITY
+
+.cart-quantity{
+  h6{
+    font-family: $main-font;
+    margin: 0px;
+    line-height: 3rem;
+    font-size: 1.2rem;
+  }
+  .button{
+    width:45px;
+    height:45px;
+    display:inline-block;
+    background-color:transparent;
+    border:none;
+    margin: 0px;
+    padding: 0px;
+    cursor:pointer;
+
+    h6{
+      color: $dark-gray;
+    }
+  }
+  .quantity{
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    background-color:white;
+    h6{
+      color: $dark-gray;
+    }
+  }
+}
+
+
 // BUTTONS
 
 .button, button{
@@ -1407,7 +1442,7 @@ img.content{
   background-color: #f14247;
 }
 
-//FRONT END!
+//FRONTEND!
 
 @mixin animation($q) {
     -webkit-animation: $q;
@@ -1573,6 +1608,11 @@ img.content{
       // &:nth-child(odd){
       //   @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
       // }
+    }
+
+    &.cart{
+      margin-top: 50px;
+      margin-bottom: 70px;
     }
 
     .columns{

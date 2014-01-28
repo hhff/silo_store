@@ -14,7 +14,7 @@ class Api::V1::OrdersController < Spree::StoreController
       end
 
       respond_with(order) do |format|
-        format.json { render json: order, serializer: OrderSerializer }
+        format.json { render json: order, :status => :created, serializer: OrderSerializer }
       end
 
     else

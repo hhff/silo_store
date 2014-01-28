@@ -5,7 +5,8 @@ SiloStore.NavbarView = Ember.View.extend
     Ember.run.scheduleOnce 'afterRender', @, 'navInserted'
 
   navInserted: ->
-    # console.log @get('content').get('item_count')
+    # Global Variables Here
+
 
 
 

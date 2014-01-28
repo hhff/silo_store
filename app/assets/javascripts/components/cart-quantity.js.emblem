@@ -1,0 +1,7 @@
+.cart-quantity
+  .button click="decreaseQuantity" 
+    h6 -
+  .quantity
+    h6= line_item.quantity
+  .button click="increaseQuantity" 
+    h6 +

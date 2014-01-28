@@ -1,6 +1,56 @@
+/ HEADERS
+/ .row
+/   .large-4.large-offset-2.columns
+/     h6 ITEM
+/   .large-2.columns.text-center
+/     h6 PRICE
+/   .large-2.columns.text-center
+/     h6 QTY
+/   .large-2.columns.text-center
+/     h6 TOTAL
+
+/ Begin Line Items
+= each line_item in line_items
+  .row.cart
+    .large-2.columns
+      = image-loader imageSrc=line_item.product.images.firstObject.attachment
+    .large-4.columns
+      h6= line_item.product.name
+      h6 Artist
+      h6 Variant
+      h6 DELETE
+    .large-2.columns.text-center
+      h6= line_item.price_formatted
+    .large-2.columns.text-center
+      = cart-quantity line_item=line_item
+    .large-2.columns.text-center
+      h6= line_item.total
+
 .row
-  .small-12.columns
-    h3 Cart
+  .large-6.columns
+    = link-to "frontend"
+      .button.full-width.blue Continue Shopping
+      
+  .large-6.columns
+    .button.full-width.green click="saveIfDirtyAndContinue" Continue
+
+
+
+
+
+    / if shipment_required
+    /   .button.full-width.green click="saveIfDirtyAndContinue" Continue to Shipping
+    / else 
+    /   if payment_required
+    /     .button.full-width.green click="saveIfDirtyAndContinue" Continue to Payment
+    /   / else
+      /   = link-to "frontend"
+      /     .button.full-width.green Complete!
+
+
+
+
+/ DEBUG INFO
 
 .row
   .small-12.columns
@@ -18,50 +68,4 @@
       h6 shipment required
     else
       h6 shipment not required
-
-.row
-  .small-12.columns
-    h4 Line Items
-
-.row
-  .large-4.large-offset-2.columns
-    h6 ITEM
-  .large-2.columns.text-center
-    h6 PRICE
-  .large-2.columns.text-center
-    h6 QTY
-  .large-2.columns.text-center
-    h6 TOTAL
-
-= each line_item in line_items
-  .row
-    .large-2.columns
-      = image-loader
-    .large-4.columns
-      h6 Name
-      h6 Artist
-      h6 Variant
-    .large-2.columns.text-center
-      h6= line_item.price
-    .large-2.columns.text-center
-      h6= line_item.quantity
-    .large-2.columns.text-center
-      h6= line_item.total
-
-.row
-  .large-6.columns
-    = link-to "frontend"
-      .button.full-width.blue Continue Shopping
-      
-  .large-6.columns
-    if shipment_required
-      = link-to "checkout.shipping"
-        .button.full-width.green Continue to Shipping
-    else 
-      if payment_required
-        = link-to "frontend"
-          .button.full-width.green Continue to Payment
-      else
-        = link-to "frontend"
-          .button.full-width.green Complete!
 
