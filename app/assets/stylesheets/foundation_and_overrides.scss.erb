@@ -1515,6 +1515,15 @@ img.content{
     height:auto;
   }
 
+  .button, button{
+    &.isLoading{
+      border-bottom: 6px solid $dark-gray;
+      background-color: $mid-gray;
+      color:$dark-gray;
+      pointer-events: none;
+    }
+  }
+
 
   @include transition(opacity, 1.5s, ease, 1.5s);
   height:100%;
@@ -1534,11 +1543,10 @@ img.content{
 
   h5{
     font-family: $main-font;
-    font-size: 1.2rem;
-    line-height: 2.25rem;
+    font-size: 1.4rem;
+    line-height: 2.75rem;
     letter-spacing: 0.12rem;
   }
-
 
   .nav-spacer{
     height:$topbar-height;
@@ -1593,6 +1601,7 @@ img.content{
           h5{
             color:white;
             display: inline-block;
+            line-height: 2.2rem;
           }
         }
       }
@@ -1674,6 +1683,22 @@ img.content{
     }
 
     .columns{
+
+      #minicart{
+
+        #line-items{
+          background-color: white;
+          padding: 0px 15px;          
+        }
+
+        #totals{
+          margin-top:15px;
+          background-color: white;
+          padding: 0px 15px;          
+        }
+      }
+
+
 
       .ember-text-field, input{
         margin-top: 40px;

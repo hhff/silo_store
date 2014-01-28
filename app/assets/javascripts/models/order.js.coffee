@@ -17,6 +17,10 @@ SiloStore.Order = DS.Model.extend
     return itemTotal
   ).property('line_items')
 
+  item_total_formatted: (->
+    '$'+@get('item_total').toFixed(2)
+  ).property('item_total')
+
   item_count: (->
     quantity = 0
     @get('line_items').forEach((lineItem)->

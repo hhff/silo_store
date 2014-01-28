@@ -66,3 +66,12 @@ SiloStore.CheckoutConfirmRoute = Ember.Route.extend
     controller.set('content', model)
 
   enter: -> @controllerFor('checkout').set('checkoutState', 'confirm')
+
+# THANKYOU ROUTE
+SiloStore.CheckoutThankyouRoute = Ember.Route.extend
+  enter: -> @controllerFor('checkout').send('canEnter', 'thankyou')
+
+  model: -> @store.find('order', 'current')
+
+  setupController: (controller, model)->
+    controller.set('content', model)

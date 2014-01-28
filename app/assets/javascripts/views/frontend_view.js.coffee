@@ -1,7 +1,16 @@
 SiloStore.FrontendView = Ember.View.extend
   templateName: 'frontend'
 
-  didInsertElement: ->
+  willAnimateIn: ()->
+      this.$().css("opacity", 0)
+
+  animateIn: (done)->
+      this.$().fadeTo(500, 1, done)
+  
+  animateOut: (done)->
+      this.$().fadeTo(500, 0, done)
+
+  willInsertElement: ->
     Ember.run.scheduleOnce 'afterRender', @, 'domReady'
 
   domReady: ->

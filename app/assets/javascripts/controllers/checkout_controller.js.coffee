@@ -43,4 +43,8 @@ SiloStore.CheckoutController = Ember.ObjectController.extend
       else
         @set('checkoutState', attemptedState)
 
+        # This statement wipes the order if it's the final step in the flow...
+        # if checkoutFlow.indexOf(attemptedState) == (checkoutFlow.length - 1)
+          # COMING SOON!
+
   }

@@ -15,9 +15,9 @@
 .row
   .large-6.columns
     = link-to "checkout.cart"
-      .button.full-width.blue Back To Cart
+      .button.full-width.blue Back
   .large-6.columns
-    .button.full-width.green click="saveAndContinue" Complete Order!
+    .button.full-width.green class=isLoading:isLoading:notLoading click="saveAndContinue" Complete Order
 
 / script type="text/javascript" src="https://js.stripe.com/v2/"
 
