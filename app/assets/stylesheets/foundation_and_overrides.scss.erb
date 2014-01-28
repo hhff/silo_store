@@ -1137,6 +1137,7 @@ label{
   letter-spacing: 0.1rem;
   cursor: default;
   text-transform: uppercase;
+  font-weight: 900;
 }
 
 span.has-tip{
@@ -1616,6 +1617,20 @@ img.content{
     }
 
     .columns{
+
+      .ember-text-field, input{
+        margin-top: 40px;
+        background-color: transparent;
+        border: none;
+        @include box-shadow(none);
+        border-bottom: 1px solid $dark-gray;
+        font-family: $main-font;
+        font-size: 3rem;
+        letter-spacing: 0.2rem;
+        height: 3.8rem;
+      }
+
+
       &.lasso-sibling{
         margin-bottom: -100%;
       }
