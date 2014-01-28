@@ -100,6 +100,7 @@ stock_item.adjust_count_on_hand(50)
 product.master.track_inventory = false
 product.properties << property
 product.set_property('artist', release.artist)
+product.set_property('format', 'Digital')
 product.images << coverimage
 product.save!
 

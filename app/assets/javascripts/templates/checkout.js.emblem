@@ -5,16 +5,10 @@
     .large-12.columns
       h1 CHECKOUT
 
-  .row
-    .large-12.columns
-      h5 Breadcrumb Here
-      / = link-to "checkout.cart"
-      /   h6 Cart
-      / = link-to "checkout.address"
-      /   h6 Address
-      / = link-to "checkout.payment"
-      /   h6 Payment
-      / = link-to "checkout.confirm"
-      /   h6 Confirm
+  = if order.line_items
+    .row
+      .large-12.columns
+        #breadcrumb
+          = breadcrumb checkoutFlow checkoutState
 
   = outlet

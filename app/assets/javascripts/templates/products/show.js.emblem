@@ -1,8 +1,7 @@
 .row
   .small-12.columns
     h1= name
-    h5 Artist Name
-    h5= order.number
+    h5= artist
 
 .row
   .small-4.columns
@@ -10,7 +9,7 @@
   .small-8.columns
     h5 Description
 
-.row
+.row.checkout-buttons
   .small-6.columns
     = link-to "frontend"
       .button.full-width.blue Back

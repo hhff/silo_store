@@ -2,11 +2,20 @@ SiloStore.Order = DS.Model.extend
   number: DS.attr 'string'
   email: DS.attr 'string'
   state: DS.attr 'string'
-  item_total: DS.attr 'number'
+  # item_total: DS.attr 'number'
   line_items: DS.hasMany 'lineItem', {embedded: 'true'}
   ship_address: DS.belongsTo 'shipAddress', {embedded: 'true'}
   completed_at: DS.attr 'date'
   payments: DS.hasMany 'payment', {embedded: 'true'}
+
+  item_total: (->
+    itemTotal = 0
+    @get('line_items').forEach((lineItem)-> 
+      if lineItem
+        itemTotal = itemTotal+lineItem.get('price')
+    )
+    return itemTotal
+  ).property('line_items')
 
   item_count: (->
     quantity = 0

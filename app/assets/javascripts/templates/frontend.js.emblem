@@ -1,45 +1,50 @@
 #frontend
   / Front end can have .hidden for a fade in
-  .row.screen-height
-    .large-2.large-offset-5.text-center.columns.vertical-lasso
-      img src="./assets/silo.png"
-
-    .button click="sayHi" Testing
+  .row-container.video-container
+    .row.screen-height.video-container
+      .large-2.large-offset-5.text-center.columns.vertical-lasso
+        img src="./assets/silo.png"
 
   / Broke Navbar into its own view.  Content Binding is an "Order" Object
   SiloStore.NavbarView contentBinding="order"
 
-  .row.screen-height
-    .large-12.columns.lasso-sibling
-      h1 ABOUT US
+  .row-container
+    .row.screen-height
+      .large-12.columns.lasso-sibling
+        h1 ABOUT US
 
-    .large-8.large-offset-2.columns.left.vertical-lasso.text-center
-      h5 Silo Arts & Records is a forward thinking internet record label, based one half in NYC, and one half in Brisbane, Australia. Dedicated to releasing the highest quality audio goods, the Silo Arts roster spans a diverse range of sounds, with a focus on originality, integrity and artistic vision.
+      .large-8.large-offset-2.columns.left.vertical-lasso.text-center
+        h5 Silo Arts & Records is a forward thinking internet record label, based one half in NYC, and one half in Brisbane, Australia. Dedicated to releasing the highest quality audio goods, the Silo Arts roster spans a diverse range of sounds, with a focus on originality, integrity and artistic vision.
 
-  .row.screen-height
-    .small-12.columns
-      h1 ARTISTS
-    .small-12.columns
-      h6 Frontend here
-    .small-12.columns
-      h6 Frontend here
+  .row-container
+    .row.screen-height
+      .small-12.columns
+        h1 ARTISTS
+      .small-12.columns
+        h6 Frontend here
+      .small-12.columns
+        h6 Frontend here
 
-  .row.screen-height
-    .small-12.columns
-      h1 STORE
+  .row-container
+    .row.screen-height
+      .small-12.columns
+        h1 STORE
 
-      .row.collapse
-        = each product in products
-          .small-3.columns.product
-            = link-to "products.show" product
-              =image-loader imageSrc=product.images.firstObject.attachment
-            .text 
-              h6= product.name
+        .row.collapse
+          = each product in products
+            .small-3.columns.product
+              = link-to "products.show" product
+                =image-loader imageSrc=product.images.firstObject.attachment
+              .text
+                h6= product.artist
+                h6= product.name
 
-  .row.screen-height
-    .small-12.columns
-      h1 LICENSING
+  .row-container
+    .row.screen-height
+      .small-12.columns
+        h1 LICENSING
 
-  .row.screen-height
-    .small-12.columns
-      h1 CONTACT
+  .row-container
+    .row.screen-height
+      .small-12.columns
+        h1 CONTACT

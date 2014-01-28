@@ -1,5 +1,7 @@
 SiloStore.CheckoutPaymentController = Ember.ObjectController.extend
 
+  needs: ['checkout']
+
   actions: {
     setupPaymentSource: (stripeResponse)->
 
@@ -43,4 +45,7 @@ SiloStore.CheckoutPaymentController = Ember.ObjectController.extend
       @get('content').save().then(()->
         self.transitionToRoute('checkout.confirm')
       )
+
+    back: ->
+      @get('controllers.checkout').send('back')
   }

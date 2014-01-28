@@ -18,7 +18,7 @@ SiloStore.ProductsShowController = Ember.ObjectController.extend
         currentQuantity = lineItem.get('quantity')
         lineItem.set('quantity', currentQuantity+1)
         order.save().then(()->
-            SiloStore.FlashQueue.pushFlash('notice', self.get('content').get('name')+' added to Cart!')
+            SiloStore.FlashQueue.pushFlash('notice', self.get('content').get('name')+' added to Cart.')
             self.transitionToRoute 'checkout.cart'
         ,()->
             alert 'save failed'
@@ -29,6 +29,8 @@ SiloStore.ProductsShowController = Ember.ObjectController.extend
         lineItem.set('quantity', quantity)
         lineItems.pushObject(lineItem)
         order.save().then(()->
+            self.store.deleteRecord(lineItem)
+            SiloStore.FlashQueue.pushFlash('notice', self.get('content').get('name')+' added to Cart.')
             self.transitionToRoute 'checkout.cart'
         ,()->
             alert 'save failed'

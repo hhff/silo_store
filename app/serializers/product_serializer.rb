@@ -1,5 +1,5 @@
 class ProductSerializer < ActiveModel::Serializer
-  attributes :id, :name
+  attributes :id, :name, :artist, :format
 
   embed :ids, include: :true
 

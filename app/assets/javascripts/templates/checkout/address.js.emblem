@@ -20,7 +20,7 @@
     h6 Order Info Mini Cart Thing Here
 
 
-.row
+.row.checkout-buttons
   .large-6.columns
     = link-to "checkout.cart"
       .button.full-width.blue Back To Cart

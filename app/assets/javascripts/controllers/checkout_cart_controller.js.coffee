@@ -4,10 +4,23 @@ SiloStore.CheckoutCartController = Ember.ObjectController.extend
 
   actions: {
     saveIfDirtyAndContinue: ->
+      self = @
       if @get('content').get('isDirty')
-        # True - is dirty and needs to save here
+        @get('content').save().then(()->
+          self.get('controllers.checkout').send('advance')
+        , ()->
+          alert 'order update failed'
+        )
       else
-        # false - continue on without save
         @get('controllers.checkout').send('advance')
 
+    delete: (lineItem)->
+      self = @
+      lineItem.set('_destroy', true)
+      @get('content').save().then(()->
+        # succesful delete
+        self.store.deleteRecord(lineItem)
+      , ()->
+        alert 'delete failed'
+      )
   }
