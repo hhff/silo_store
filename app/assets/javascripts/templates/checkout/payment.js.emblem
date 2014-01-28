@@ -1,14 +1,6 @@
 .row
-  .large-12.columns
-    h1 PAYMENT
-
-.row
-  .large-12.columns
+  .large-8.columns
     Ember.TextField valueBinding="email" placeholder="Email" type="text"
-
-.row
-  .large-12.columns
-    h6 Powered By Stripe
 
     = each payment in payments
       form#stripe-form
@@ -18,9 +10,8 @@
         input placeholder="CCV" type="text" data-stripe="cvc" value="123"
         input placeholder="Zip / Postal Code" type="text" data-stripe="address_zip" value="11211"
 
-      h6 Amount
-      h6= payment.payment_source.cc_type
-
+  .large-4.columns
+    h6 Order Info Mini Cart Thing Here
 
 .row
   .large-6.columns

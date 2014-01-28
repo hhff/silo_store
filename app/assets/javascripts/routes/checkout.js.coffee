@@ -54,7 +54,16 @@ SiloStore.CheckoutPaymentRoute = Ember.Route.extend
       # Change this when adding more payment methods!
       payment.set('payment_method_id', 1)
 
-  enter: -> @controllerFor('checkout').set('checkoutState', 'payment')
+  enter: -> 
+    checkoutController = @controllerFor('checkout')
+    
+    # Keep working on this!!!
+    if checkoutController.get('canEnter')
+      alert 'Can Enter!'
+      # Set state in the "advance" action in checkout controller rather than here!!
+      checkoutController.set('checkoutState', 'payment')
+    else
+      # Can't enter this route, transition to 
 
 
 # CONFIRM ROUTE

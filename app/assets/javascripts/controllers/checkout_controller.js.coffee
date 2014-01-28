@@ -1,6 +1,7 @@
 SiloStore.CheckoutController = Ember.ObjectController.extend
 
   checkoutState: 'null'
+  canEnter: true
 
   checkoutFlow: (->
     order = @get('content').order

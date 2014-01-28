@@ -6,7 +6,3 @@ SiloStore.NavbarView = Ember.View.extend
 
   navInserted: ->
     # Global Variables Here
-
-
-
-

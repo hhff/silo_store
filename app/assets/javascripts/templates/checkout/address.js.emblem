@@ -1,14 +1,7 @@
 .row
-  .large-12.columns
-    h1 SHIPPING ADDRESS
-
-.row
-  .large-12.columns
+  .large-8.columns
     Ember.TextField valueBinding="email" placeholder="Email" type="text"
 
-.row
-  .large-12.columns
-    
     Ember.TextField valueBinding="ship_address.firstname" placeholder="First Name" type="text"
     Ember.TextField valueBinding="ship_address.lastname" placeholder="Last Name" type="text"
 
@@ -22,6 +15,9 @@
     Ember.TextField valueBinding="ship_address.zipcode" placeholder="Zip" type="text"
 
     Ember.TextField valueBinding="ship_address.phone" placeholder="Phone" type="text"
+
+  .large-4.columns
+    h6 Order Info Mini Cart Thing Here
 
 
 .row

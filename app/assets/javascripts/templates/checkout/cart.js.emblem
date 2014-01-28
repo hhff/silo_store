@@ -52,20 +52,20 @@
 
 / DEBUG INFO
 
-.row
-  .small-12.columns
-    h6 Order Number:
-    h6= number
+/ .row
+/   .small-12.columns
+/     h6 Order Number:
+/     h6= number
 
-.row
-  .large-6.columns
-    if payment_required
-      h6 payment required
-    else
-      h6 payment not required
-  .large-6.columns
-    if shipment_required
-      h6 shipment required
-    else
-      h6 shipment not required
+/ .row
+/   .large-6.columns
+/     if payment_required
+/       h6 payment required
+/     else
+/       h6 payment not required
+/   .large-6.columns
+/     if shipment_required
+/       h6 shipment required
+/     else
+/       h6 shipment not required
 
