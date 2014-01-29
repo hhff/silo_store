@@ -1435,13 +1435,13 @@ img.content{
   line-height: 2;
 }
 #flash-view.is-notice #message {
-  background-color: #6c3;
+  background-color: $mid-green;
 }
 #flash-view.is-warning #message {
-  background-color: #27AAE1;
+  background-color: $mid-blue;
 }
 #flash-view.is-error #message {
-  background-color: #f14247;
+  background-color: $mid-red;
 }
 
 //FRONTEND!
@@ -1548,6 +1548,15 @@ img.content{
     letter-spacing: 0.12rem;
   }
 
+  #fader{
+    @include transition(all, 400ms, ease);
+    
+    &.isLoading{
+      pointer-events:none;
+      @include opacity(0.4);
+    }
+  }
+
   .nav-spacer{
     height:$topbar-height;
   }
@@ -1572,6 +1581,10 @@ img.content{
           background-size:contain;
           height:45px;
           width:45px;
+
+          &.isLoading{
+            @include animation(rotate 3s ease-in-out 0s infinite normal);
+          }
         }
       }
 
@@ -1609,6 +1622,13 @@ img.content{
       li.social{
         height:45px;
         width:45px;
+        @include transition(all, 400ms, ease);
+
+        &:hover{
+          cursor:pointer;
+          @include box-shadow(inset 0px 0px 10px rgba(0, 0, 0, 0.75));
+          background-color: $mid-blue !important;
+        }
 
         &.facebook{
           background: url('<%= asset_path "nav-icons/facebook.png" %>') center center no-repeat;
@@ -1647,10 +1667,6 @@ img.content{
   .row{
     &.screen-height{
       height:100%;
-
-      // &:nth-child(odd){
-      //   @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
-      // }
     }
 
     &.checkout-buttons{

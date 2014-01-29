@@ -12,7 +12,7 @@ SiloStore.Order = DS.Model.extend
     itemTotal = 0
     @get('line_items').forEach((lineItem)-> 
       if lineItem
-        itemTotal = itemTotal+lineItem.get('price')
+        itemTotal = itemTotal+(lineItem.get('price') * lineItem.get('quantity'))
     )
     return itemTotal
   ).property('line_items')

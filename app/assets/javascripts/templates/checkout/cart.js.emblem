@@ -19,10 +19,10 @@
   .row.checkout-buttons
     .large-6.columns
       = link-to "frontend"
-        .button.full-width.blue Continue Shopping
+        .button.full-width.blue class=isLoading:isLoading:notLoading Continue Shopping
         
     .large-6.columns
-      .button.full-width.green click="saveIfDirtyAndContinue" Continue
+      .button.full-width.green class=isLoading:isLoading:notLoading click="saveIfDirtyAndContinue" Continue
 
 = else
   .row.cart

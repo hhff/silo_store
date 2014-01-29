@@ -29,6 +29,7 @@ SiloStore.ProductsShowController = Ember.ObjectController.extend
         lineItem.set('quantity', quantity)
         lineItems.pushObject(lineItem)
         order.save().then(()->
+            # Shouldn't have to do this... but I think it's due to nested attributes and rails not sending a 201 created for each...
             self.store.deleteRecord(lineItem)
             SiloStore.FlashQueue.pushFlash('notice', self.get('content').get('name')+' added to Cart.')
             self.transitionToRoute 'checkout.cart'

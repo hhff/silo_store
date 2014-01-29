@@ -1,24 +1,24 @@
 SiloStore.CheckoutView = Ember.View.extend
   templateName: 'checkout'
 
-  willAnimateIn: ()->
-      this.$().css("opacity", 0)
+  # willAnimateIn: ()->
+  #     this.$().css("opacity", 0)
 
-  animateIn: (done)->
-      this.$().fadeTo(500, 1, done)
+  # animateIn: (done)->
+  #     this.$().fadeTo(500, 1, done)
   
-  animateOut: (done)->
-      this.$().fadeTo(500, 0, done)
+  # animateOut: (done)->
+  #     this.$().fadeTo(500, 0, done)
 
   willInsertElement: ->
     Ember.run.scheduleOnce 'afterRender', @, 'domReady'
 
   domReady: ->
     # Global Variables Here
-    # frontend = @.$().find('#frontend')
+    frontend = @.$(document).find('#frontend')
     # navbar = frontend.find('.top-bar')
     # navbarHeight = navbar.height()
-    # navbarContainer = frontend.find('.contain-to-grid')
+    navbarContainer = frontend.find('.contain-to-grid').addClass('fixed')
     # navbarSpacer = frontend.find('.nav-spacer')
     # screens = frontend.find('.screen-height')
     # minHeight = 600;

@@ -19,18 +19,19 @@ SiloStore.CheckoutPaymentView = Ember.View.extend
   actions: {
     createToken: ->
       controller = @get('controller')
-      controller.set('isLoading', true)
+      controller.send('setLoading', true)
 
       stripeResponseHandler = (status, response)->
 
         if status == 200
           controller.send('setupPaymentSource', response)
         else
-          alert response.error.message
+          SiloStore.FlashQueue.pushFlash('error', response.error.message);
+
+          alert 
 
       stripeForm = @.$().find('form#stripe-form')
       Stripe.card.createToken(stripeForm, stripeResponseHandler)
   }
-
 
 

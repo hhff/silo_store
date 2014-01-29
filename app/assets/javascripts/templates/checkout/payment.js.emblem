@@ -3,18 +3,19 @@
     Ember.TextField valueBinding="email" placeholder="Email" type="text"
     label Email
 
-    = each payment in payments
-      form#stripe-form
-        input placeholder="Card Number" type="text" data-stripe="number" value="4242-4242-4242-4242"
-        label Card Number
-        input placeholder="Expiration Month" type="text" data-stripe="exp_month" value="08"
-        label Expiration Month
-        input placeholder="Expiration Year" type="text" data-stripe="exp_year" value="2016"
-        label Expiration Year
-        input placeholder="CCV" type="text" data-stripe="cvc" value="123"
-        label CVC
-        input placeholder="Zip / Postal Code" type="text" data-stripe="address_zip" value="11211"
-        label Zip / Postal Code
+    / = each payment in payments
+    form#stripe-form
+      input placeholder="Card Number" type="text" data-stripe="number" value="4242-4242-4242-4242"
+      label Card Number
+      input placeholder="Expiration Month" type="text" data-stripe="exp_month" value="08"
+      label Expiration Month
+      input placeholder="Expiration Year" type="text" data-stripe="exp_year" value="2016"
+      label Expiration Year
+      input placeholder="CCV" type="text" data-stripe="cvc" value="123"
+      label CVC
+      input placeholder="Zip / Postal Code" type="text" data-stripe="address_zip" value="11211"
+      label Zip / Postal Code
+
 
   .large-4.columns
     #minicart
@@ -40,7 +41,7 @@
 
 .row.checkout-buttons
   .large-6.columns
-    .button.full-width.blue click="back" Back
+    .button.full-width.blue class=isLoading:isLoading:notLoading click="back" Back
   .large-6.columns
     .button.full-width.green class=isLoading:isLoading:notLoading click="createToken target='view'" Confirm Order
 

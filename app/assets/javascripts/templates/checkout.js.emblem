@@ -1,14 +1,16 @@
 #frontend
   SiloStore.NavbarView contentBinding="order"
+  
+  #fader class=isLoading:isLoading:notLoading
 
-  .row
-    .large-12.columns
-      h1 CHECKOUT
-
-  = if order.line_items
     .row
       .large-12.columns
-        #breadcrumb
-          = breadcrumb checkoutFlow checkoutState
+        h1 CHECKOUT
 
-  = outlet
+    = if order.line_items
+      .row
+        .large-12.columns
+          #breadcrumb
+            = breadcrumb checkoutFlow checkoutState
+
+    = outlet

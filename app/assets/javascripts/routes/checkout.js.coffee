@@ -10,8 +10,7 @@ SiloStore.CheckoutRoute = Ember.Route.extend
 # CART ROUTE
 SiloStore.CheckoutCartRoute = Ember.Route.extend
   enter: -> @controllerFor('checkout').send('canEnter', 'cart')
-  model: ->
-    @store.find('order', 'current')
+  model: -> @store.find('order', 'current')
 
   setupController: (controller, model)->
     controller.set('content', model)
@@ -40,32 +39,27 @@ SiloStore.CheckoutPaymentRoute = Ember.Route.extend
   setupController: (controller, model)->
     controller.set('content', model)
 
-    order = model
-    payments = order.get('payments')
-
-    if payments.get('length') < 1
-      payment = @store.createRecord 'payment', {
-        amount: order.get('item_total')
-        # Change this when adding more payment methods!
-        payment_method_id: 1
-      }
-      order.get('payments').pushObject(payment)
-    else
-      payment = order.get('payments').get('firstObject')
-      payment.set('amount', order.get('item_total'))
-      # Change this when adding more payment methods!
-      payment.set('payment_method_id', 1)
-
 # CONFIRM ROUTE
 SiloStore.CheckoutConfirmRoute = Ember.Route.extend
-  enter: -> @controllerFor('checkout').send('canEnter', 'confirm')
+  enter: ->  @controllerFor('checkout').send('canEnter', 'confirm')
 
   model: -> @store.find('order', 'current')
 
   setupController: (controller, model)->
     controller.set('content', model)
 
-  enter: -> @controllerFor('checkout').set('checkoutState', 'confirm')
+  # deactivate: ()->
+  #   self = @
+  #   controller = @get('controller')
+  #   order = @get('currentModel')
+
+    # We could wipe the payment details here for security
+    # if controller.get('attemptingComplete') == false
+    #   order.get('payments').forEach((payment)->
+    #     self.store.deleteRecord(payment)
+    #   )
+
+
 
 # THANKYOU ROUTE
 SiloStore.CheckoutThankyouRoute = Ember.Route.extend
@@ -75,3 +69,8 @@ SiloStore.CheckoutThankyouRoute = Ember.Route.extend
 
   setupController: (controller, model)->
     controller.set('content', model)
+
+  deactivate: ->
+    @transitionTo('checkout.cart').then(->
+      SiloStore.reset()
+    )

@@ -1,5 +1,5 @@
 .row
   .large-4.large-offset-4.columns
     h6 THANKYOU, YOU SHOULD RECIEVE DA EMAIL YO
-    h6= order.email
+    h6= email
 
