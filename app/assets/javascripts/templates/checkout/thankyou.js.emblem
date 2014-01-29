@@ -1,5 +1,9 @@
-.row
-  .large-4.large-offset-4.columns
-    h6 THANKYOU, YOU SHOULD RECIEVE DA EMAIL YO
-    h6= email
+.row.thankyou
+  .large-6.large-offset-3.columns.text-center
+    h2 Thankyou.
+    h4 We've sent a confirmation email with your download links to:
+    h3= email
+
+    = link-to "frontend"
+      .button.blue Continue Shopping
 

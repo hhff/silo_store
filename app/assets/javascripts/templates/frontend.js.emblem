@@ -21,9 +21,7 @@
       .small-12.columns
         h1 ARTISTS
       .small-12.columns
-        h6 Frontend here
-      .small-12.columns
-        h6 Frontend here
+        h3 Artists will go here.
 
   .row-container
     .row.screen-height
@@ -36,15 +34,19 @@
               = link-to "products.show" product
                 =image-loader imageSrc=product.images.firstObject.attachment
               .text
-                h6= product.artist
-                h6= product.name
+                h3= product.artist
+                h4= product.name
 
   .row-container
     .row.screen-height
       .small-12.columns
         h1 LICENSING
+      .small-12.columns
+        h3 Licensing Info will go here.
 
   .row-container
     .row.screen-height
       .small-12.columns
         h1 CONTACT
+      .small-12.columns
+        h3 Contact Infor will go here.

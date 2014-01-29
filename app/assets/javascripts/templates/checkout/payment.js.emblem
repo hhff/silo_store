@@ -3,7 +3,6 @@
     Ember.TextField valueBinding="email" placeholder="Email" type="text"
     label Email
 
-    / = each payment in payments
     form#stripe-form
       input placeholder="Card Number" type="text" data-stripe="number" value="4242-4242-4242-4242"
       label Card Number
@@ -16,47 +15,11 @@
       input placeholder="Zip / Postal Code" type="text" data-stripe="address_zip" value="11211"
       label Zip / Postal Code
 
-
   .large-4.columns
-    #minicart
-      #line-items
-        .row
-          .large-12.columns.text-center
-            h5 Cart
-        = each line_item in line_items
-          .row
-            .large-4.columns
-              = image-loader imageSrc=line_item.product.images.firstObject.attachment
-            .large-8.columns
-              h6= line_item.product.name
-              h6= line_item.product.artist
-              h6= line_item.product.format
-
-      #totals
-        .row
-          .large-6.columns
-            h6 TOTAL
-          .large-6.columns.text-right
-            h6= item_total_formatted
+    SiloStore.MinicartView contentBinding="line_items"
 
 .row.checkout-buttons
   .large-6.columns
     .button.full-width.blue class=isLoading:isLoading:notLoading click="back" Back
   .large-6.columns
     .button.full-width.green class=isLoading:isLoading:notLoading click="createToken target='view'" Confirm Order
-
-  / = each line_item in line_items
-  /   .row.cart
-  /     .large-2.columns
-  /       = image-loader imageSrc=line_item.product.images.firstObject.attachment
-  /     .large-4.columns
-  /       h6= line_item.product.name
-  /       h6= line_item.product.artist
-  /       h6= line_item.product.format
-  /       h6 click="delete line_item" DELETE
-  /     .large-2.columns.text-center
-  /       h6= line_item.price_formatted
-  /     .large-2.columns.text-center
-  /       = cart-quantity line_item=line_item
-  /     .large-2.columns.text-center
-  /       h6= line_item.total

@@ -1,16 +1,25 @@
-.row
-  .large-12.columns
-    h1 CONFIRM
+.row.confirm
+  .large-4.columns
+    h3 Address Details
+    h4= email
+    =if shipment_required
+      h4 Address will go here
+    else
+      h4 No Physical Address Required
 
-.row
   .large-4.columns
-    h6 items
-  .large-4.columns
-    h6 shipping address
-  .large-4.columns
-    h6 credit card
+    h3 Payment Details
+    h4 Name on Card
+    h4 Last Digits of Card
+    h4 Card Type
 
-.row
+
+  .large-4.columns
+    SiloStore.MinicartView contentBinding="line_items"
+
+
+
+.row.checkout-buttons
   .large-6.columns
     .button.full-width.blue class=isLoading:isLoading:notLoading click="back" Back
   .large-6.columns

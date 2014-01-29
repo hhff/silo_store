@@ -1,0 +1,19 @@
+#minicart
+  #line-items
+    = each line_item in line_items
+      .row.collapse
+        .large-4.columns
+          = image-loader imageSrc=line_item.product.images.firstObject.attachment
+        .large-8.columns
+          h5= line_item.product.name
+          h5= line_item.product.artist
+          h6= line_item.product.format
+          h6 x
+          h6= line_item.quantity
+
+  #totals
+    .row
+      .large-6.columns
+        h5 TOTAL
+      .large-6.columns.text-right
+        h5= item_total_formatted

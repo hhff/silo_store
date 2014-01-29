@@ -5,16 +5,17 @@
       .large-2.columns
         = image-loader imageSrc=line_item.product.images.firstObject.attachment
       .large-4.columns
-        h6= line_item.product.name
-        h6= line_item.product.artist
-        h6= line_item.product.format
-        h6 click="delete line_item" DELETE
+        h3= line_item.product.name
+        h3= line_item.product.artist
+        h4= line_item.product.format
+        .delete
+          h3 click="delete line_item" DELETE
       .large-2.columns.text-center
-        h6= line_item.price_formatted
+        h5= line_item.price_formatted
       .large-2.columns.text-center
         = cart-quantity line_item=line_item
       .large-2.columns.text-center
-        h6= line_item.total
+        h5= line_item.total
 
   .row.checkout-buttons
     .large-6.columns
@@ -25,10 +26,10 @@
       .button.full-width.green class=isLoading:isLoading:notLoading click="saveIfDirtyAndContinue" Continue
 
 = else
-  .row.cart
+  .row.cart-empty
     .large-4.large-offset-4.columns.text-center
-      h6 Your Cart is Empty.
+      h2 Your Cart is Empty.
       = link-to "frontend"
-        .button.full-width.blue Continue Shopping
+        .button.blue Continue Shopping
 
 
