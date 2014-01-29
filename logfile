@@ -22,3 +22,13 @@ ERROR:  database "silostore_development" already exists
 STATEMENT:  CREATE DATABASE "silostore_development" ENCODING = 'unicode'
 ERROR:  database "silostore_test" already exists
 STATEMENT:  CREATE DATABASE "silostore_test" ENCODING = 'unicode'
+FATAL:  database "xxxx" does not exist
+FATAL:  database "xxxx" does not exist
+FATAL:  database "xxxx" does not exist
+FATAL:  database "xxxx" does not exist
+FATAL:  database "xxyyxx" does not exist
+FATAL:  database "xxyyxx" does not exist
+FATAL:  database "xxyyxx" does not exist
+FATAL:  database "xxyyxx" does not exist
+FATAL:  database "xxyyxx" does not exist
+FATAL:  database "xxyyxx" does not exist
