@@ -1,10 +1,9 @@
 development:
-  # host: localhost
+  host: localhost
   adapter: postgresql
   encoding: unicode
   database: silostore_development
   pool: 5
-  # username: Hugh
   password:
 
 # test:
