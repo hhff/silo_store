@@ -1,20 +1,20 @@
 development:
-  host: localhost
+  # host: localhost
   adapter: postgresql
   encoding: unicode
   database: silostore_development
   pool: 5
-  username: Hugh
+  # username: Hugh
   password:
 
-test:
-  host: localhost
-  adapter: postgresql
-  encoding: unicode
-  database: silostore_test
-  pool: 5
-  username: Hugh
-  password:
+# test:
+#   host: localhost
+#   adapter: postgresql
+#   encoding: unicode
+#   database: silostore_test
+#   pool: 5
+#   username: Hugh
+#   password:
 
 # production:
 #   adapter: postgresql
