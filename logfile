@@ -1,0 +1,24 @@
+LOG:  database system was shut down at 2014-01-29 14:54:07 EST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "silostore_development" does not exist
+FATAL:  database "silostore_development" does not exist
+ERROR:  relation "spree_preferences" does not exist at character 323
+STATEMENT:                SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+	                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+	                FROM pg_attribute a LEFT JOIN pg_attrdef d
+	                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+	               WHERE a.attrelid = '"spree_preferences"'::regclass
+	                 AND a.attnum > 0 AND NOT a.attisdropped
+	               ORDER BY a.attnum
+	
+ERROR:  database "silostore_development" already exists
+STATEMENT:  CREATE DATABASE "silostore_development" ENCODING = 'unicode'
+ERROR:  database "silostore_development" already exists
+STATEMENT:  CREATE DATABASE "silostore_development" ENCODING = 'unicode'
+ERROR:  database "silostore_development" already exists
+STATEMENT:  CREATE DATABASE "silostore_development" ENCODING = 'unicode'
+ERROR:  database "silostore_development" already exists
+STATEMENT:  CREATE DATABASE "silostore_development" ENCODING = 'unicode'
+ERROR:  database "silostore_test" already exists
+STATEMENT:  CREATE DATABASE "silostore_test" ENCODING = 'unicode'
